@@ -1,4 +1,4 @@
-Whenever you might need to signal to the browser that some mistake happened, you can use the `abort()` helper function. What this does is it essentially raises an exception. Think of it like throwing an exception in normal Python code, except an `abort()` is for doing it with a Flask webserver.
+Whenever you might need to signal to the browser that some mistake happened, you can use the `abort()` helper function. What this does is it raises an exception. Think of it like throwing an exception in normal Python code, except an `abort()` is for doing it with a Flask webserver.
 
 We don't need it for our project at this point, but it will become useful later. Here's a quick example: Let's say you have a user loader function called `load_user()` that takes an ID and gives back a user object. If that user doesn't exist, you can signal an error with an `abort()`:
 

@@ -1,4 +1,4 @@
-Okay, now for the grand showing of your error page. Remember that base template you made earlier? Let's use it for making a cool looking error page. You can actually kill two birds with one stone, so to speak, as your error handlers are pointing to the same template. Meaning, you can show both kinds of errors, the "not found" and "internal server errors" ones, all in one template file.
+Okay, now for the grand showing of your error page. Remember that base template you made earlier? Let's use it for making a cool looking error page. You can actually kill two birds with one stone, so to speak, as your error handlers are pointing to the same template. Meaning, you can show both kinds of errors, the "not found" and "internal server error" ones, all in one template file.
 
 ```html
 {% extends 'base.html' %}
