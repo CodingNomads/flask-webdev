@@ -1,6 +1,6 @@
 Okay, now for the grand showing of your error page. Remember that base template you made earlier? Let's use it for making a cool looking error page. You can actually kill two birds with one stone, so to speak, as your error handlers are pointing to the same template. Meaning, you can show both kinds of errors, the "not found" and "internal server error" ones, all in one template file.
 
-```html
+```jinja2
 {% extends 'base.html' %}
 
 {% block title %}{{super()}} {{error_title}}{% endblock %}

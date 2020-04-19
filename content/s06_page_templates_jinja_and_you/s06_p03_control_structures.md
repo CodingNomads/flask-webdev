@@ -6,7 +6,7 @@ Python wouldn't be Python without its conditionals and control flow. And it turn
 
 "Should I display that element, or shouldn't I?" That, along with other hard and not-so-hard questions, can be handled with conditional statements:
 
-```html
+```jinja2
 {% if user %}
     Hello, {{ user }}!
 {% else %}
@@ -20,7 +20,7 @@ Now we can know who's looking at the page! Unless they don't tell us...
 
 Lists of elements are no match for Jinja; they shall be rendered consecutively if you so choose! These are great for using in HTML list tags.
 
-```html
+```jinja2
 <ul>
     {% for song in favorite_songs %}
         <li>{{ song }}</li>
@@ -34,7 +34,7 @@ Delicious!
 
 Macros? What the heck are those? Think of them as the Jinja version of Python functions. They're great for avoiding monotonous tasks. Watch:
 
-```html
+```jinja2
 {% macro render_song_title(song) %}
     <li>{{ song }}</li>
 {% endmacro %}
@@ -56,13 +56,13 @@ Automation! The best thing since sliced bread.
 
 Y'know, Picasso is onto something here. In some cases, it's extremely useful to copy one template into another, and that's exactly what Jinja's `import` statement does. But, "to copy oneself is pathetic?" If he's talking about Jinja, I think maybe he meant "silly."
 
-```html
+```jinja2
 {% import 'common.html' %}
 ```
 
 Would some `macro` statements and an `import` or two be useful? You betcha. In fact, that's the definition of "synergy":
 
-```html
+```jinja2
 {% import 'macros.html' as macros %}
 <ul>
     {% for song in favorite_songs %}
@@ -79,7 +79,7 @@ You a Java(Script) coder? 'Cause the `extends` keyword makes a comeback in Jinja
 
 If you make a "base" template called `base.html`, you can "reserve" blocks of code to hold certain content in certain places that can be inherited later.s
 
-```html
+```jinja2
 <html>
 <head>
     {% block head %}
@@ -95,7 +95,7 @@ If you make a "base" template called `base.html`, you can "reserve" blocks of co
 
 You'll see here that blocks of code are defined with arbitrary names, in this case `head`, `title`, and `body`. Another template that extends this base template (let's call it `index.html`) might look like this:
 
-```html
+```jinja2
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block head %}

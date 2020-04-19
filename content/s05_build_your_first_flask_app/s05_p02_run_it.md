@@ -1,6 +1,6 @@
 ### Running The Code Again, With A Twist
 
-You now have your 7-or-so line `hello.py` file and I'm sure you're wondering what to do with it and how to get running as a web app. It's not quite as simple as using an online development tool like Repl.it, since now we're in a real web development scenario, but this page will get you on your way!
+You now have your 7-or-so line `hello.py` file and I'm sure you're wondering what to do with it and how to get running as a web app. It's not quite as simple as using an online development tool like Repl.it, since now we're in a real web development scenario, but this lesson will get you on your way!
 
 You may even be thinking, "Hey wait a sec, didn't we leave something out in that file? That `app.run()` thing?" (Thinking in code, I love it!)
 

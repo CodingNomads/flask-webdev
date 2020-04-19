@@ -24,7 +24,7 @@ In order for your Flask app(s) to run smoothly, any extensions you use must be i
 
 Remember that base template you made in the last lesson? Well, once Flask-Bootstrap is initialized, it provides its *own* base template. This template comes with all the Bootstrap files you'll need to freshen up those webpages. And yes, at this point, all you'll have to do is *extend* this Bootstrap base template. That means using:
 
-```html
+```jinja2
 {% extends "bootstrap/base.html" %}
 ```
 
@@ -49,7 +49,7 @@ What does that mean for you? It means you can save yourself lots of styling head
 
 Let's try it out. Make a new file `templates/base.html` (if you haven't already) and type this in:
 
-```html
+```jinja2
 {% extends 'bootstrap/base.html' %}
 {% block title %}{{super()}}Ragtime -{% endblock %}
 {% block navbar %}
@@ -86,7 +86,7 @@ The next part is *a lot* of HTML, but most of that is for the fancy navbar that 
 
 Remember that `user()` view function you made that prints a custom message depending on the URL? Modify the `templates/user.html` template and put this inside:
 
-```html
+```jinja2
 {% extends "base.html" %}
 {% block title %}
     {{super()}}

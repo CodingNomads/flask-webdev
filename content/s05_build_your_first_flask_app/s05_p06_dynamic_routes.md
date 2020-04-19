@@ -1,4 +1,4 @@
-[//]: # (Will add this page to introduce dynamic routes, which is useful for the templates section)
+[//]: # (Will add this lesson to introduce dynamic routes, which is useful for the templates section)
 
 How'd you feel about the basics of routes? There's much more, but for now let's introduce you to dynamic routes, then you can take a shot at making a few more yourself for some practice. Haven't you ever noticed that when browsing SoundCloud or Facebook, whenever you checked out some weirdo's profile that you could see something like these in the address?
 
