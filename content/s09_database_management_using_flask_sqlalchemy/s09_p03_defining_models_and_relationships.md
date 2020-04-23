@@ -31,27 +31,18 @@ Great, you've got a couple of nice looking models now! Roles will be talked abou
 
 ### A Bit About Columns
 
-After `__tablename__` are the attributes of the model, which are instances of the `db.Column` helper class. Every `db.Column` has a type, and Flask SQLAlchemy gives you helper classes for those, too. The `Integer` and `String` column types have been defined here, but there are many others:
+After `__tablename__` are the attributes of the model, which are instances of the `db.Column` helper class. Every `db.Column` has a type, and Flask SQLAlchemy gives you helper classes for those, too. The `Integer` and `String` column types have been defined here, but there are many others. Here are the most common:
 
 | Type name    | Python type        | Description                                                  |
 | :----------- | :----------------- | :----------------------------------------------------------- |
-| BigInteger   | int                | Bigger integer value                                         |
 | Boolean      | bool               | True or False value                                          |
-| Date         | datetime.date      | Date value                                                   |
 | DateTime     | datetime.datetime  | Date and time value                                          |
-| Enum         | str                | List of string values                                        |
 | Float        | float              | Floating-point number                                        |
 | Integer      | int                | Regular integer                                              |
-| Interval     | datetime.timedelta | Time interval                                                |
 | LargeBinary  | str                | Binary blob                                                  |
-| Numeric      | decimal.Decimal    | Fixed-point number                                           |
 | PickleType   | Any                | Python object Automatic Pickle serialization                 |
-| SmallInteger | int                | Short-range integer, typically 16 bits                       |
 | String       | str                | Variable-length string                                       |
 | Text         | str                | Variable-length string, better for very long strings         |
-| Time         | datetime.time      | Time value                                                   |
-| Unicode      | unicode            | Variable-length Unicode string                               |
-| UnicodeText  | unicode            | Variable-length Unicode string, better for very long strings |
 
 After the first argument, other configuration options can be specified for a column. Some of them are:
 
@@ -67,14 +58,31 @@ For the new `User` model, `unique` is specified for the `username` attribute sin
 
 ### Relationships
 
-Because relational databases are *relational*, they gotta have **relationships**. Relationships are connections between rows of different tables. In the next code snippet, you'll establish a **one-to-many** relationship between `Users` and `Roles`. Each user of *many* will have *one* role in the application, meaning a user could a normal user, a moderator to manage comments, or a site admin to delete or edit certain content. This relationship between models can be defined with another column in the user table and a `relationship` in the role table. You'll see how that works in just a bit.
+Because relational databases are *relational*, they gotta have **relationships**. Relationships are connections between rows of different tables. In the next code snippet, you'll establish a **one-to-many** relationship between `Role` and `User`. Each user of *many* will have *one* role in the application, meaning a user could a normal user, a moderator to manage comments, or a site admin to delete or edit certain content. This relationship between models can be defined with another column in the user table and a `relationship` in the role table. To establish a one-to-many relationship from `Role` to `User`, you do this:
+
+```python
+class Role(db.Model):
+    # ...
+    users = db.relationship('User', backref='role')
+
+class User(db.Model):
+    # ...
+    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
+```
+
+First, let's go backwards and look at the `User` model. Why would you want to add a column? Since each user has one role, to know which role that corresponds to, you can add a **foreign key** with the `db.ForeignKey()` helper class that references a row in the `roles` table. That was a mouthful, but just think of it this way.
+
+We are CodingNomads, right? When you think of a *foreigner*, or say a tourist, that is a person who is in a country that he or she is not originally from. This person brought a ID or passport from the person's home country to the new country. It's similar in a database with foreign keys. In this case, the `role_id` is like that tourist's ID. It *references* a `Role` in the `roles` table, but `role_id` is an *attribute* of `User`, like the person in the new country. The `db.ForeignKey()`'s argument is the column in the `roles` table that contains the primary key.
+
+[//]: # (Dunno if I coulda skipped explaining about what foreign keys ^^^)
+
+The `users` attribute of `Role` represents all the users that have a particular role. With an instance of `Role`, you can see the "many" side of the relationship with the `users` attribute. It's simply the list of all users with that role! The `db.relationship()`'s purpose is to tell the application what model is on the other side. Here's the really cool part about it that you should read twice: the `backref` keyword argument allows you to specify `role` as an attribute of a `User` instance *in addition to* the `role_id` attribute. So instead of `a_user_instance.role_id` to get the ID of the role, you can use `a_user_instance.role` to get the actual `Role`.
+
+There are a few other relationship options:
+
+[//]: # (TODO: put relationship options in a table)
+
+Really cool stuff, right?! If it still hasn't sunken in, that's no problem, with practice you will get the hang of it. One thing to note is that in there's a somewhat rare chance that `db.relationship()` won't be able locate the foreign key by itself. For example, it could happen when you define two `Role` foreign keys in the `User` model. It can't be sure which one you might mean, so giving it additional arguments to remove any ambiguity should solve the problem.
 
 
-### The below needs editing
-
-There are many relationship options you can use, and each has a different behavior/use case. (Try some in a lab)
-
-create_all() can't be called again if the models need to be changed because the tables already have the old columns. To force a change in columns, you can call drop_all() and then create them all again with create_all(), but that removes any data you have!
-
-But don't worry, there's a way to update your models without destroying all the information that exists! We'll discover this magical solution together later, but for now let's talk about how to get data in the tables in the first place.
-
+You just got through the basics models and relationships! Does it feel like boot camp? Good, that means your learning. Now gimme 20 pushups, then carry on to the next lesson.
