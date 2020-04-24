@@ -31,7 +31,7 @@ Here's the really neat thing: you can type almost anything Pythonic in these pla
 
 Dictionaries, indexing a list with another variable, changes to styling, even calling object methods. All of it works in a placeholder if it's 1) Python code and 2) Jinja knows about it.
 
-Oh, and one more thing! Jinja also includes filters which can go after a variable with a pipe character in between. For that last example about screaming, you can also do this to get the same result:
+Oh, and one more thing! Jinja also includes filters which can go after a variable with a pipe character in between. For that last example about screaming, you can also do the following to get the same result:
 
 ```jinja2
 <p>I scream for {{ my_str|upper }}</p>

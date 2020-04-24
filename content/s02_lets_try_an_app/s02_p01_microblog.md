@@ -1,4 +1,4 @@
-We will now take a look at an app that Ragtime is based on, called Microblog. While you will get to see all the cool features written into this app, you *won't* need to know how everything works in order to succeed in this course. Microblog is written entirely with Flask and a handful of extensions, and has many features you would expect in a current-day web app, including:
+You will now take a look at an app that Ragtime is based on, called Microblog. While you will get to see all the cool features written into this app, you *won't* need to know how everything works in order to succeed in this course. Microblog is written entirely with Flask and a handful of extensions, and has many features you would expect in a current-day web app, including:
 
 - Storing users and content in a database
 - Attractive styling of the webpages

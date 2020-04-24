@@ -22,4 +22,4 @@ So go ahead, be curious. But don't get too lost, because remember, all of it wil
 
 ![Pic to show just that](../images/code_folder_circled.png)
 
-That's it! Right here in the __ folders and __ files is an entire web app. The amazing part? We can actually go much smaller: an app in only *one* file. In the next section, you'll actually build this web app yourself!
+That's it! Right here in the __ folders and __ files is an entire web app. The amazing part? You can actually go much smaller: an app in only *one* file. In the next section, you'll actually build this web app yourself!

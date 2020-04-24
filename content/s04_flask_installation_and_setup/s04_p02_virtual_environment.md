@@ -1,6 +1,4 @@
-Once you have Python installed, it's time to set up a virtual environment. We won't cover what a virtual environment is here, but <a href="https://realpython.com/python-virtual-environments-a-primer/" target="_blank">this article</a> is a great introduction on the subject.
-
-It's important to keep the project's dependencies and libraries contained in a virtual environment, so that you can develop your first Flask app without worrying about those pesky library clashes. Throughout this course, we'll be using the `venv` python module to create virtual environments.
+Once you have Python installed, it's time to set up a virtual environment. It's important to keep the project's dependencies and libraries contained in a virtual environment, so that you can develop your first Flask app without worrying about those pesky library clashes. Throughout this course, you'll be using the `venv` python module to create virtual environments.
 
 If you aren't already there, go ahead and change your directory to your `flask-webdev` project folder. It would look something like this if you followed the folder structure instructions up to this point:
 

@@ -1,4 +1,4 @@
-What's free, open-source, and is priceless? Give up? It's a good ol' free *Integrated Development Environment*. The one we'll be using for this course is **VSCode**. You can download from the <a href="https://code.visualstudio.com" target="_blank">VSCode homepage</a>.
+What's free, open-source, and is priceless? Give up? It's a good ol' free *Integrated Development Environment*. The one you'll be using for this course is **VSCode**. You can download from the <a href="https://code.visualstudio.com" target="_blank">VSCode homepage</a>.
 
 Setup should be pretty straightforward. Before you get started with development, consider installing these extensions to aid in your Flask web app development quest:
 

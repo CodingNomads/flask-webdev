@@ -6,7 +6,7 @@ The path tells the server what the user *really* wants. Well, not what his or he
 
 ### Routes and View Functions in Flask
 
-The same is true for a Flask web server, and every Flask application instance has an association between the path and the section of code a.k.a. the *handler* (mentioned previously) that will handle the request. Each mapping of a path to its associated handler is called a *route*. So when you use the `app.route` decorator, you're defining a mapping from a path to the *view function* (the decorated function) that will be called when a user visits that URL. If you happened to use Flask to make our example.com website, you could write the following to handle to the request for the "about" page:
+The same is true for a Flask web server, and every Flask application instance has an association between the path and the section of code a.k.a. the *handler* (mentioned previously) that will handle the request. Each mapping of a path to its associated handler is called a **route**. So when you use the `app.route` decorator, you're defining a mapping from a path to the **view function** (the decorated function) that will be called when a user visits that URL. If you happened to use Flask to make our example.com website, you could write the following to handle the request for the "about" page:
 
 ```python
 @app.route('/about')

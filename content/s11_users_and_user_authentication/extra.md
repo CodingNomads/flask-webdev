@@ -2,7 +2,7 @@
 User Authentication
 ==========================
 
-Will not use login_required decorator in this section, doesn't make sense to restrict users to plain pages (we don't have fan page yet, let's say)
+Will not use login_required decorator in this section, doesn't make sense to restrict users to plain pages (you don't have fan page yet, let's say)
 
 ##### how flask-login works
 1. user clicks "Log in" to navigate login page and is presented (by the handler for the URL) with the form
@@ -36,4 +36,4 @@ Need to explain why the development vs production setup is the way it is
 
 brief intro on testing? at this point?
 
-Password hashing is a common solution to this problem. a hashing function takes a plaintext password as input, applies some randomness to it (the salt), then applies several one-way crypto transformations to it. What comes out is a new sequence of characters that look nothing like the original. We use werkzeugs functions for hashing
+Password hashing is a common solution to this problem. a hashing function takes a plaintext password as input, applies some randomness to it (the salt), then applies several one-way crypto transformations to it. What comes out is a new sequence of characters that look nothing like the original. you use werkzeugs functions for hashing

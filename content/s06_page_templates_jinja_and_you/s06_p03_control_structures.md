@@ -14,7 +14,7 @@ Python wouldn't be Python without its conditionals and control flow. And it turn
 {% endif %}
 ```
 
-Now we can know who's looking at the page! Unless they don't tell us...
+Now you can know who's looking at the page! Unless they don't tell us...
 
 #### `for`
 
@@ -75,9 +75,9 @@ Defining one or more macros and one template, then importing them for painless a
 
 #### `extends` and `block`
 
-You a Java(Script) coder? 'Cause the `extends` keyword makes a comeback in Jinja (if you can call it that). You're darn tootin': *inheritance* in templates! Using `block` structures, you can define and then *extend* or even override *blocks* of template code.
+You a Java(Script) coder? 'Cause the `extends` keyword makes a comeback in Jinja (if you can call it that). You're darn tootin': **inheritance** in templates! Using `block` structures, you can define and then **extend** or even override *blocks* of template code.
 
-If you make a "base" template called `base.html`, you can "reserve" blocks of code to hold certain content in certain places that can be inherited later.s
+If you make a "base" template called `base.html`, you can "reserve" blocks of code to hold certain content in certain places that can be inherited later.
 
 ```jinja2
 <html>

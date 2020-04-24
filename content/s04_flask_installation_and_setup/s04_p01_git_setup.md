@@ -73,4 +73,4 @@ git push -u origin master
 
 If everything worked okay, you should have gotten output that eventually said "Branch master set up to track remote branch master from origin." Refresh the Github page to see your commit.
 
-Congrats, you're now all set to keep updating your project to version control! Remember, the `flask-webdev` repo directory we made earlier will be *the* place to keep your first Flask app. Next, you'll ready your virtual environment for the journey ahead.
+Congrats, you're now all set to keep updating your project to version control! Remember, the `flask-webdev` repo directory you made earlier will be *the* place to keep your first Flask app. Next, you'll ready your virtual environment for the journey ahead.

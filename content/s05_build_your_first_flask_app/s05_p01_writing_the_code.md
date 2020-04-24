@@ -6,15 +6,9 @@ Once you've got VSCode running, you can go to `File -> Open Folder`, then naviga
 
 [//]: # (Note to self: Be sure to change the filename later!)
 
----
+<div class="alert alert-warning" role="alert"><strong>Note: </strong>This is one more friendly reminder that you'll be developing in the <code>flask-webdev</code> directory from now on, unless otherwise specified. Assume that you'll have the steps above completed every time you come back for more Flask development.</div>
 
-Note: This is one more friendly reminder that you'll be developing in the `flask-webdev` directory from now on, unless otherwise specified. Assume that you'll have the steps above completed every time you come back for more Flask development.
-
----
-
-Note: If you have multiple virtual environments you're juggling these days, make sure you have the correct one activated. You can issue the command `deactivate` in the CLI to close the session you currently have open in order to activate a new one.
-
----
+<div class="alert alert-warning" role="alert"><strong>Note: </strong>If you have multiple virtual environments you're juggling these days, make sure you have the correct one activated. You can issue the command <code>deactivate</code> in the CLI to close the session you currently have open in order to activate a new one.</div>
 
 Then in VSCode, make a new file called `hello.py`. Now let's get those fingers moving with some code!
 
@@ -42,16 +36,10 @@ def index():
 
 This one is fun, because decorators are fun. The `app.route` decorator here, with `'/'` as its argument, translates to "whenever someone visits the root URL, call this `index()` function to return a response."
 
-Put another way, the `index()` function is a *handler* for the root URL. If the application is deployed at *www.example.com*, navigating to https://www.example.com/ with nothing else would trigger the `index()` function to be called and run on the server. Routes will be covered a little more later.
+Put another way, the `index()` function is a **handler** for the root URL. If the application is deployed at *www.example.com*, navigating to https://www.example.com/ with nothing else would trigger the `index()` function to be called and run on the server. Routes will be covered a little more later.
 
 [//]: # (or now? Also covering `add_url_rule` would be good)
 
------
-
-Note: If you're not super familiar with decorators, check out <a href="https://realpython.com/primer-on-python-decorators/" target="_blank">this Real Python article</a> on the subject.
-
------
-
-Okay, that wasn't too bad, right? Make sure you save the file and pat yourself on the back! Oh, what's that? We haven't even really done anything except write a 7-or-so line file, you say? Yes yes, we'll get to that next. (Web development requires patience, grasshopper!)
+Okay, that wasn't too bad, right? Make sure you save the file and pat yourself on the back! Oh, what's that? You haven't even really done anything except write a 7-or-so line file, you say? Yes yes, you'll get to that next. (Web development requires patience, grasshopper!)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gbNCBVzPYak?start=57" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
