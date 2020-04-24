@@ -7,7 +7,7 @@ If you *were* surprised, my apologies. For your information, Bootstrap operates 
 Oh yes, this guy is *ready* to make his webpages look snazzy using Flask-Bootstrap! He can install it easily if he has been following along this whole time:
 
 ```bash
-pip install flask-bootstrap
+(env) $ pip install flask-bootstrap
 ```
 
 Since this is your first use of a Flask extension, just know that you'll have to *initialize* Flask-Bootstrap within our `hello.py`. It's pretty simple, though.
