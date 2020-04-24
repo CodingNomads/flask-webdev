@@ -26,4 +26,4 @@ The first part of the address, `https://` or `http://`, is the protocol and tell
 
 Well, it turns out there is, and you saw it in the last page. The  **path** is the part of the URL that points to the actual location of the web resource. It's like a path on your computer, where */home/you/Pictures/corn_flakes* is the album of your corn flake collection (everyone has one of those, right?). If you go to *http://example.com/about*, the path is `/about`. For our original example, *htpp://example.com/*, the path is just `/` which indicates the root path.
 
-So then what's the `route` stuff that Flask uses? Tune in next time for another episode of "Flask Web Development" to find out! Or just click to go to the next page. That works, too.
+So then what's the `route` stuff that Flask uses? Tune in next time for another episode of "Flask Web Development" to find out! Or just click to go to the next lesson. That works, too.

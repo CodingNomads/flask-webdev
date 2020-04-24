@@ -20,7 +20,7 @@ Before you get started, you're gonna have to make a folder named `templates`, wh
 
 First things first, let's get a simple template rendered. Think of a template as just an HTML file. Make a new template file `templates/index.html`. Put in the following:
 
-```html
+```jinja2
 <h1>Hello Web World!</h1>
 ```
 

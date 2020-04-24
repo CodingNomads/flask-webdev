@@ -1,6 +1,6 @@
 ### Using Variables In Templates
 
-From the last page, you know from believing your nomadic Flask course creator and all his sage, vast wisdom (who couldn't quite type the previous with a straight face) that the Jinja template engine can handle variables, as long as the Flask application does its part by passing them over. For a simple but dynamic page that does this relay, the view function would look like so:
+From the last lesson, you know from believing your nomadic Flask course creator and all his sage, vast wisdom (who couldn't quite type the previous with a straight face) that the Jinja template engine can handle variables, as long as the Flask application does its part by passing them over. For a simple but dynamic page that does this relay, the view function would look like so:
 
 ```python
 @app.route('/user/<username>')
@@ -10,7 +10,7 @@ def user(username):
 
 Crack open a new `user.html` template file and crack your knuckles 'cause here's the template content:
 
-```html
+```jinja2
 <h1>Hello, {{ username }}!</h1>
 ```
 
@@ -22,7 +22,7 @@ Wuzzat?! Looks like some weird HTML, but this is how Jinja likes its variables p
 
 Here's the really neat thing: you can type almost anything Pythonic in these placeholder sections and Jinja will know how to render it. Even cooler, you can put these placeholders almost *anywhere* in the template and Jinja will still expand them to their actual values. That is, as long as you pass every value Jinja needs to render into the template. Here's some other other examples:
 
-```html
+```jinja2
 <p>Sticks and stones may break my bones but Jinja understands my dictionary lookups: {{ my_dict['key'] }}<p>
 <p>George Washington once said: "With Jinja, I can put two variables in one placeholder! See: {{ my_list[my_int] }}</p>
 <font size="{{ my_int }}">THIS TEXT IS HUGE! or tiny</font>
@@ -33,7 +33,7 @@ Dictionaries, indexing a list with another variable, changes to styling, even ca
 
 Oh, and one more thing! Jinja also includes filters which can go after a variable with a pipe character in between. For that last example about screaming, you can also do the following to get the same result:
 
-```html
+```jinja2
 <p>I scream for {{ my_str|upper }}</p>
 ```
 
