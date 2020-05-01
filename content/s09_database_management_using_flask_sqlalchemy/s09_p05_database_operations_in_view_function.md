@@ -15,7 +15,7 @@ As a webapp developer with a database and a frontend, it's inevitable that you'l
 Now, the answer to why has been made clear. To illustrate what this might look like in code, you can make use of your `NameForm` to put data into the database if it doesn't already exist.
 
 ```python
-@main.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     form = NameForm()
     if form.validate_on_submit():

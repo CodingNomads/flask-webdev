@@ -23,7 +23,7 @@ What you'll do first is command Flask-SQLAlchemy to create your database with th
 >>> db.create_all()
 ```
 
-If all goes well, you should now have a new file called `data.sqlite`. That's your database! As it might imply, `create_all()` creates all of your new tables. If you accidentally call the `create_all()` function twice, no worries, as it won't remake any tables that were already created, no will it update those existing ones. Of course the bad news is, if you made new changes to your models like adding columns and you *already* have a database, again, `create_all()` won't update those.
+If all goes well, you should now have a new file called `data-dev.sqlite`. That's your database! As it might imply, `create_all()` creates all of your new tables. If you accidentally call the `create_all()` function twice, no worries, as it won't remake any tables that were already created, no will it update those existing ones. Of course the bad news is, if you made new changes to your models like adding columns and you *already* have a database, again, `create_all()` won't update those.
 
 To update them, that means you have to nuke the current tables. That's the brute force way anyway, there is a thing call "migration" that you'll learn about really soon. Anyway, to destroy all the data in your tables and update them, use the `drop_all()` function, then the `create_all()` function again:
 
