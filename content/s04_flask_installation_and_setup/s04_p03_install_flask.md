@@ -1,7 +1,7 @@
 Once you have your virtual environment created, then activated, you're ready to install Flask! Double check that your virtual environment is activated, then use `pip` to install Flask:
 
 ```bash
-pip install flask
+(env) $ pip install flask
 ```
 
 That's it! You should be good to go with your fresh Flask installation. To make sure everything is A-OK, drop into a python interpreter and try importing the module:
