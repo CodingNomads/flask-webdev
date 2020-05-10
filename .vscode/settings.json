@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "env/bin/python3.7",
+    "cSpell.ignoreWords": [
+        "itertools",
+        "jsonify",
+        "pytest"
+    ]
+}
