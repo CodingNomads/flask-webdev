@@ -40,3 +40,4 @@ ___
 You are now hereby graduated from the School of Sending Emails with Flask! And the College of User Verification with Flask. The next section will introduce you to user roles, and what your role will be in implementing them.
 
 <div class="alert alert-warning" role="alert"><strong>Note: </strong>This is another reminder to perform a database migration!</div>
+

@@ -89,3 +89,4 @@ As you may have guessed, you'll need to create yet another template that asks th
 ___
 
 Coolio, now you should be all set to welcome and then ask your users to confirm their new accounts! But while testing this, haven't you noticed your app get a teensy bit slower? Find out why in the next lesson.
+
