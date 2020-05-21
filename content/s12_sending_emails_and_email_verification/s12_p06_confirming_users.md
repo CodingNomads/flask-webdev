@@ -59,6 +59,7 @@ You can tack the `before_app_request` callback onto a new function in the `app/a
 def before_request():
     if current_user.is_authenticated \
             and not current_user.confirmed \
+            and request != 'static':
             and request.blueprint != 'auth' \
             and request.endpoint != 'static':
         return redirect(url_for('auth.unconfirmed'))
