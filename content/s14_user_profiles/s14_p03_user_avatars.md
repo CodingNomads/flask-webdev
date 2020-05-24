@@ -31,10 +31,6 @@ To make these MD5 hashes, we'll use each user's email as the input. Let's try an
 ```bash
 (env) $ python
 >>> import hashlib
->>> hashlib.md5('paul@example.com'.encode('utf-8')).hashdigest()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-AttributeError: '_hashlib.HASH' object has no attribute 'hashdigest'
 >>> hashlib.md5('paul@example.com'.encode('utf-8')).hexdigest()
 'a8780c6edeb8eda5678a38e94b8ecafe'
 ```

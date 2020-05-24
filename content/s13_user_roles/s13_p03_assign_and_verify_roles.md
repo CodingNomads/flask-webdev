@@ -80,7 +80,7 @@ def admin_required(f):
     return permission_required(Permission.ADMIN)(f)
 ```
 
-The `permission_required` decorator is a generic permissions check: the view function can do what it does *if the user has the specificed permission*. Otherwise, an abort is returned as the response, specifically with a 403 Forbidden status code. The `admin_required` decorator piggy-backs off the other decorator, and only checks if the user has the `ADMIN` permissionl.
+The `permission_required` decorator is a generic permissions check: the view function can do what it does *if the user has the specificed permission*. Otherwise, an abort is returned as the response, specifically with a 403 Forbidden status code. The `admin_required` decorator piggy-backs off the other decorator, and only checks if the user has the `ADMIN` permission.
 
 "That's great," you're probably thinking, "but how exactly do I use them?" Ah yes, of course. To apply decorators for view functions in the correct order, refer to the following examples:
 
@@ -124,7 +124,7 @@ def inject_permissions():
 # ...
 ```
 
-You'll notice it's also pretty to your `shell_context_processor` decorated function! Now, all templates globally have access to the `Permission` class, so you check user permissions much more easily.
+You'll notice it's also pretty similar to your `shell_context_processor` decorated function! Now, all templates globally have access to the `Permission` class, so you check user permissions much more easily.
 
 ### Unit Tests
 

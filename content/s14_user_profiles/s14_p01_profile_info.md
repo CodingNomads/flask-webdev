@@ -1,4 +1,4 @@
-The app your making is a social app. What's more ubiquitous in a social app than user profile pages? Not much, so in this section you'll be diving into making a profile pages for users, allowing them to edit their profile, and allowing admins to edit profiles, too. In this less, you'll start with the profile page.
+The app you're making is a social app. What's more ubiquitous in a social app than user profile pages? Not much, so in this section you'll be diving into making a profile pages for users, allowing them to edit their profile, and allowing admins to edit profiles, too. In this lesson, you'll start with the profile page.
 
 ### Profile Information
 
@@ -48,7 +48,7 @@ Now every time a request is made and the user is authenticated, it will update t
 
 ### Flask-Moment
 
-Before you start fleshing out your user pages, you'll need to take a *moment* to think about how you're going to deal with time. Every user on your site is probably not in the same time zone, which complicates the way you'll show them what time a another user was last seen, or just dates and times in general. Typically, what servers do is use Coordinated Universal Time (UTC) that is independent of time zones. But this time is not something you want your users to see. It may be confusing for them to have to do the math in their head for what time something happened in *their* time.
+Before you start fleshing out your user pages, you'll need to take a *moment* to think about how you're going to deal with time. Every user on your site is probably not in the same time zone, which complicates the way you'll show them what time another user was last seen, or just dates and times in general. Typically, what servers do is use Coordinated Universal Time (UTC) that is independent of time zones. But this time is not something you want your users to see. It may be confusing for them to have to do the math in their head for what time something happened in *their* time.
 
 Since probably no one likes programming time zone logic, some other folks made the sacrifice and created Moment.js to share with the world. It's an open source JavaScript library that is able to take the UTC time from the web browser, originally sent by the server, and converts it to local time for the user.
 

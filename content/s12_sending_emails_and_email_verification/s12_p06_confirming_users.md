@@ -34,7 +34,7 @@ Starting from the beginning, you wouldn't want to reconfirm a user if they are c
 
 With your new token generation and email sending capabilities, the time has come to combine them! Pop open your `register()` view function once again.
 
-This time around, you'll again make sure the user registration information is valid, then you'll `generate_confirmation_token()` for that user. Once you create a `token`, you'll `send_email()` with a template to create the confirmation link inside the email. Get it?
+This time around, you'll again make sure the user registration information is valid, then you'll `generate_confirmation_token()` for that user. Once you create a `token`, you'll `send_email()` with a template to create the confirmation link inside the email. Read those sentences again if it didn't quite make sense. :)
 
 And one more thing: just like your welcome and new user notification emails, you're mission is to create that template. It's to nicely ask your users to pretty please confirm their account. Like last time, make a text template and an HTML template.
 
@@ -42,7 +42,7 @@ Unlike the last time, you'll put your templates in the `templates/auth/email` di
 
 And one thing you should know: in your templates, you will need to use the `url_for()` Flask method to point to the new `confirm()` view function you made above, and pass in the `token` that way.
 
-<div class="alert alert-warning" role="alert"><strong>Note: </strong>The <code>url_for()</code> Flask method accepts a keyword argument <code>_external</code>, which is a boolean. Set this to <code>True</code> to so that the URL is *fully qualified*, meaning it includes <code>https://</code> or <code>http://</code>, the hostname, and the port. Otherwise, your user will be pointed to a confirmation link that doesn't work!</div>
+<div class="alert alert-warning" role="alert"><strong>Note: </strong>The <code>url_for()</code> Flask method accepts a keyword argument <code>_external</code>, which is a boolean. Set this to <code>True</code> to so that the URL is <em>fully qualified</em>, meaning it includes <code>https://</code> or <code>http://</code>, the hostname, and the port. Otherwise, your user will be pointed to a confirmation link that doesn't work!</div>
 
 ### "YOU SHALL NOT PASS... Unless you confirm your account, kthxbye"
 

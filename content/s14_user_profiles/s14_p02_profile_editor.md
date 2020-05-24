@@ -14,7 +14,7 @@ class EditProfileForm(FlaskForm):
     submit = SubmitField("Submit")
 ```
 
-This has just a `TextAreaField` so that the user can go to town on their own life, since it's more than just a simple text box. Or say nothing at all, since the `Length` validator isn't specified!
+This has just a `TextAreaField` so that the user can <a href="https://idioms.thefreedictionary.com/go+to+town" target="_blank">go to town</a> on describing their own life, since it's more than just a simple text box. Or say nothing at all, since the `Length` validator isn't specified!
 
 #### View Function
 
@@ -53,7 +53,7 @@ Great, now that those are added, all that left is to give the user easy access t
 {% endif %}
 ```
 
-Of course, there's you wouldn't want another user to edit just anyone's profile, so a check is in place to make sure the currently signed is user is the same one as in the user page.
+Of course, you wouldn't want another user to edit just anyone's profile, so a check is in place to make sure the currently signed is user is the same one as in the user page.
 
 Your user editor, and new "Profile" navigation bar link, will look something like this:
 
@@ -84,7 +84,7 @@ This should get you started with the form! Now onto the new view function.
 
 #### View Function
 
-Your view function will be called `admin_edit_profile` and will be a handler for the endpoint `'/editprofile/<int:id>`. It will be located in `main/views.py`. You'll need to also require the user be authenticated and has admin rights. There are decorators for that. :)
+Your view function will be called `admin_edit_profile` and will be a handler for the endpoint `'/editprofile/<int:id>'`. It will be located in `main/views.py`. You'll need to also require the user be authenticated and they will need to have admin rights. There are decorators for that. :)
 
 Yes, this time you have a dynamic route, where the `id` is the user's identification that the admin can edit. The view function should be very similar to the `edit_profile()` view function you made before, except now you need to accommodate the new fields and query for the user that needs to be edited.
 

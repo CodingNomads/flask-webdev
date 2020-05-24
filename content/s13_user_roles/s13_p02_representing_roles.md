@@ -5,7 +5,7 @@ What's your role?
 
 ### Improved Roles
 
-Back in the section on databases, you made a simple `roles` table that had only had role names and a one-to-many relationship with users. It's now time for an upgrade, and the first thing you'll do is add a new `permissions` column. Open up `app/models.py` and plop these changes in:
+Back in the section on databases, you made a simple `roles` table that only had role names and a one-to-many relationship with users. It's now time for an upgrade, and the first thing you'll do is add a new `permissions` column. Open up `app/models.py` and plop these changes in:
 
 ```python
 class Role(db.Model):
@@ -42,7 +42,7 @@ The other column is `default`. This is a boolean value that will have a value of
 | Moderate comments made by other users       | `MODERATE`      | 8     |
 | Administrate users and content              | `ADMIN`         | 16    |
 
-For an app like Ragtime, this is what you might expect users to be able to do, but your permissions can be slightly different if you'd like. For example, maybe you wanted to make a shopper's social network instead (what a *silly* idea, self). Your permission names could be `FOLLOW`, `REVIEW`, `ANNOUNCE`, `MODERATE`, and `ADMIN`, to represent giving users the ability to review a store or announce a new product for their own store. You can also expand what tasks a user is able to do with a given permission, like allowing users to comment both on compositions *and* on users' pages. The point is, there are options! **For now**, it's advised you stick as close to the permissions listed above as possible. While much of this is arbitrary, this permissions model will allow you build a pretty sweet app.
+For an app like Ragtime, this is what you might expect users to be able to do, but your permissions can be slightly different if you'd like. For example, maybe you wanted to make a shopper's social network instead. Your permission names could be `FOLLOW`, `REVIEW`, `ANNOUNCE`, `MODERATE`, and `ADMIN`, to represent giving users the ability to review a store or announce a new product for their own store. You can also expand what tasks a user is able to do with a given permission, like allowing users to comment both on compositions *and* on users' pages. The point is, there are options! **For now**, it's advised you stick as close to the permissions listed above as possible. While much of this is arbitrary, this permissions model will allow you to build a pretty sweet app.
 
 Looking at that table again, each task has an associated permission name and a value. The permission name is the name you'll give the permission in Python. It's all caps because the values are constant and aren't supposed to change. The value is *not* arbitrary, and as was hinted at before, it's got a binary pattern to it. Just for fun, and because your Flask course creator is a total nerd, let's represent all of those values as binary numbers (base 2):
 

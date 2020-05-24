@@ -86,6 +86,6 @@ Coming soon.
 
 ___
 
-*Fantastic*. You've gotten your users set up for a rude... er, I mean, necessary awakening needed to ensure your app is secure as possible. While your users will need to confirm their accounts to continue with using your web app, it doesn't matter so much because this practice is standard, and for good reason: security for both you and your users.
+*Fantastic*. You've gotten through generating tokens! This is an important step to ensure your app is as secure as possible. In the next lesson, your users will need to confirm their accounts to continue with using your web app. It's a standard practice in web apps, and for good reason: security for both you and your users.
 
 But hang on, right now they don't *need* to confirm their accounts first... It's time to fix that.
