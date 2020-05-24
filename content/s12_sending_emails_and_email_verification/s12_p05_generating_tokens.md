@@ -9,7 +9,7 @@ Person with a rare token used to validate people's bank accounts in the 1700's, 
 
 The wrong way to generate tokens is to simply use the user's ID as the token. Once the app gets that link, it knows the user with that ID confirmed their account, right? Ideally, yes, but in practice you can't guarantee that. There are all sorts of bad actors and even those dang kids that never get off your lawn! People like that could exploit this bad design to confirm all sorts of arbitrary accounts, and all they have to do is punch in some lottery numbers.
 
-The right way to generate tokens is to take humans completely out of the picture. Only the app should need to worry about tokens and who's validated their account or not, yes? While humans are clever, computers *can* outsmart them. This is true of token generation. The way this is done is to give only the app the ability to generate *valid* tokens, which enlists the help of your friend, *cryptography*.
+The right way to generate tokens is to take humans completely out of the picture. Only the app should need to worry about tokens and who's validated their account or not, yes? While humans are clever, computers *can* outsmart them. At least, this is true of token generation. The way this is done is to give only the app the ability to generate *valid* tokens, which enlists the help of your friend, *cryptography*.
 
 Remember back when you made forms and you needed a secret key for Flask-WTF to do cryptographic stuff? It is to protect the user session so that user information is safe. The user session cookies contain a crytpo signature, and if any of the content of the user session is modified, the signature becomes invalid and Flask discards the session to make a new one. A similar method is used for confirmation tokens using the `itdangerous` package, and the same package is used to generate crypto signatures for user sessions. Let's see just how *anti-dangerous* this package really is.
 
@@ -19,7 +19,7 @@ What's more fun than messing around with cryptography in a Flask shell session? 
 
 ![The most fun you'll ever have](https://images.unsplash.com/photo-1566890068693-158bd749501f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)
 
-Go ahead and pull up a Flask shell session and follow along. What you'll do is generate a signed token that "hides" a user ID inside:
+Go ahead and pull up a Flask shell session and follow along. What you'll do is generate a signed token. This token will look to a human like a bunch of cryptographic magic, or perhaps complete nonsense. However, it will keep a user ID "hidden" inside, which can only be unhidden if certain conditions are met. Go ahead, try it out:
 
 ```python
 (env) $ flask shell
@@ -33,7 +33,9 @@ b'eyJhbGciOiJIUzUxMiIsImlhdCI6MTU4OTA2MDcxOSwiZXhwIjoxNTg5MDY0MzE5fQ.ey ...'
 {'confirm_id': 42}
 ```
 
-While this package can come up with some interesting words, like "pawjema", that's not what you're here for. While `itsdangerous` provides you with lots of options for token generators, the one picked here is the `TimedJSONWebSignatureSerializer`. JSON Web Signatures (JWSs) are a state-of-the-art way of ensuring that data doesn't change from when the data was *signed*. If it does change, the signature won't match up and is declared invalid data. Your app's secret key is used as the encryption key for signing the confirmation code. The time expiration ensures that the token is validated within a certain time period. The data becomes invalid if it expires like that half-gallon of milk in the back of Uncle Steve's refrigerator.
+While this package can come up with some interesting made-up words, like "pawjema" or "TamNuIo", that's not what you're here for. And no, it doesn't *actually* make up words on purpose, though it *is* fun to look for them.
+
+The `itsdangerous` package provides you with lots of options for token generators, but the one picked here is the `TimedJSONWebSignatureSerializer`. JSON Web Signatures (JWSs) are a state-of-the-art way of ensuring that data doesn't change from when the data was *signed*. If it does change, the signature won't match up and is declared invalid data. Your app's secret key is used as the encryption key for signing the confirmation code. The time expiration ensures that the token is validated within a certain time period. The data becomes invalid if it expires like that half-gallon of milk in the back of Uncle Steve's refrigerator.
 
 The token, or the cryptographic gobbledygook that hides the confirmation code, gets generated using the `dumps()` method of the serializer. Then, to get the data back, you provide the special token to the `loads()` method of the serializer, which *decodes* the token. If the token is invalid or the time expiration has passed, the `loads()` method raises an exception.
 

@@ -47,7 +47,7 @@ The last three configuration key settings are for your app. They are more for co
 
 ![It burns!](../images/server_on_fire.png)
 
-The `RAGTIME_MAIL_SUBJECT_PREFIX` is just that, the subject prefix for when the app sends an email. When the app sends email to users, it will be *from* whatever the value of the `RAGTIME_MAIL_SENDER`.
+The `RAGTIME_MAIL_SUBJECT_PREFIX` is just that, the subject prefix for when the app sends an email. When the app sends email to users, it will be *from* whatever you set the value of `RAGTIME_MAIL_SENDER` to.
 
 ### Initializing Flask-Mail
 
