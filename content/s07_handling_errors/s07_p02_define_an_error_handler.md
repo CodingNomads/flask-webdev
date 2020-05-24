@@ -3,6 +3,14 @@ Now that you know what kinds of errors people encounter, you're ready to define 
 With these handlers, you'll use the Flask `errorhandler` decorator instead of `route`. This new decorator requires one argument, which is the status code it is tasked with handling. Go ahead and whip out your code editor to `hello.py` and type this in.
 
 ```python
+@app.errorhandler(403)
+def page_not_found(e):
+    error_title = "Forbidden"
+    error_msg = "You shouldn't be here!"
+    return render_template('error.html',
+                           error_title=error_title,error_msg=error_msg), 403
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     error_title = "Not Found"

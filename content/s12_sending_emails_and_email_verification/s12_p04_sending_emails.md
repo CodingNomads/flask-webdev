@@ -34,9 +34,9 @@ It's arts and crafts time! Well, for textual templates, anyway. This is your tur
 1. a welcome email for registered users, and
 2. a notification email for the app admin (you) that a user registered
 
-You can have these emails say whatever you want. You'll create two files for each email, a `.txt` file and a `.html` file. Those will be your templates. Put them in `templates/mail/`. Call them `welcome.txt`/`html and `new_user.txt`/`html`. They'll say something like "Welcome, {{user.username}}!" and "A new user, {{user.username}}, signed up at {{time}}". You are encouraged to use a `User` instance to get details about said user in your template. But again, it's your choice what these email messages say. :D
+You can have these emails say whatever you want. You'll create two files for each email, a `.txt` file and a `.html` file. Those will be your templates. Put them in `templates/mail/`. Call them `welcome.txt`/`html` and `new_user.txt`/`html`. They'll say something like "Welcome, {{user.username}}!" and "A new user, {{user.username}}, signed up at {{time}}". You are encouraged to use a `User` instance to get details about said user in your template. But again, it's your choice what these email messages say. :D
 
-Making a text file template works the same way as an HTML template. You use placeholders and create control structures the same way you would an HTML template. Once you're done, you'll get to try it out in a flask shell session!
+Making a text file template works the same way as an for HTML template. You use placeholders and create control structures the same way you would an HTML template. Once you're done, you'll get to try it out in a Flask shell session!
 
 <div class="alert alert-warning" role="alert"><strong>Note: </strong>Your templates should look very similar. The only difference really being that the text file doesn't have HTML tags. Use the same placeholders in your templates so that you don't get errors with your keyword arguments.</div>
 

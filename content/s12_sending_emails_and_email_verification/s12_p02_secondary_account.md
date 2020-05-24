@@ -70,7 +70,7 @@ Then on the next page, where it says "Select device," click it and choose "Other
 
 ![](../images/gmail/gmail11_app_pw_other.png)
 
-Once you click "GENERATE," you'll be presented with a 16 character code. That's your new app password! Yes, your *Flask app* app password. Yes, you'll want to write it down. You will need this password in order to authenticate with Google SMTP server and therefore be able to send emails.
+Once you click "GENERATE," you'll be presented with a 16 character code. That's your new app password! Yes, your *Flask app* app password. And, yes, *you'll want to write it down*. ;) You will need this password in order to authenticate with Google's SMTP server and, therefore, be able to send emails.
 
 ![](../images/gmail/gmail_12_generated_app_pw.png)
 
