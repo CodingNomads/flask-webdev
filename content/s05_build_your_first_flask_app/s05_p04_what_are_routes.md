@@ -27,6 +27,8 @@ The endpoint name is simply the symbolic name you can use to reference the view 
 
 Did you also notice the `<p>` HTML tags in the response? It's no surprise since that's what websites display for their users! A bunch of HTML.
 
+___
+
 For this course, you'll mostly be working with `localhost:5000` as your website (where 5000 is the port), so an about page would be at `localhost:5000/about`. Now, aren't you just itching to make some of your own routes with all the knowledge you now have? Go get 'em, tiger! Afterwards, you be fleshing out your pages with templates and Jinja.
 
 [//]: # (TODO: At some point, may need to talk about application  and request contexts)

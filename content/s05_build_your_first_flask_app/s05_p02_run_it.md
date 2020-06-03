@@ -53,5 +53,6 @@ You can also get some documentation for Flask commands with `--help`, for exampl
 <div class="alert alert-warning" role="alert"><strong>Note: </strong>While you <i>can</i> still use <code>app.run()</code> for bringing up your Flask app, keep in mind that setting <code>FLASK_APP</code>, <code>FLASK_DEBUG</code>, and <code>FLASK_ENV</code> environment variables won't have any effect if you go that route (pun intended).
 </div>
 
+___
 
 Now that you've learned the nitty-gritty of development using Flask, and since you already have the grit it takes to be a Flask developer, you're set to keep going with your app. But first, an existential question... what are URLs, anyway?

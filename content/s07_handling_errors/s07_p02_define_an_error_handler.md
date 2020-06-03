@@ -32,4 +32,6 @@ Now obviously you can't just go to your browser now and type in `localhost:5000/
 
 Responses in Flask by default return 200, but if you explicitly need to return a different status code, it can be passed as a second argument. Yes, that means your error handlers have to return the number they are supposed to handle.
 
+___
+
 You're anxious to be able to see the result of your new handlers, aren't you? Of course, of course. To get there, you'll need to create that missing `error.html` template.

@@ -27,4 +27,6 @@ Did you type in that exact string, `"keep it secret, keep it safe"`? While it mi
 
 Why all this rambling about secrets and security? Well, it's important your or your users' information is safe. By defining your secret key, you will 1) make Flask-WTF happy and 2) protect your forms against nasty cross-site request forgery (CSRF) attacks. Flask-WTF uses that security key to generate security tokens for every form, which are then stored in the user session. That precious, private information in the user session is only accessible with the secret key, so that's why it's so secret! To learn more about secret keys in Flask, check out <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/#sessions" target="_blank">this link</a>.
 
+___
+
 How does one *form* a form with Flask-WTF? The answer to this question shall be answered in the next lesson!

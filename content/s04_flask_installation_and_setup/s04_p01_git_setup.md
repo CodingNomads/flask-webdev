@@ -10,10 +10,10 @@ mkdir CodingNomads
 cd CodingNomads
 ```
 
-Once you get that created, go ahead and create three more folders to organize a little further.
+Once you get that created, go ahead and create two more folders to organize a little further.
 
 ```bash
-mkdir resources labs projects
+mkdir labs projects
 ```
 
 [//]: # (More?)
@@ -72,5 +72,7 @@ git push -u origin master
 ```
 
 If everything worked okay, you should have gotten output that eventually said "Branch master set up to track remote branch master from origin." Refresh the Github page to see your commit.
+
+___
 
 Congrats, you're now all set to keep updating your project to version control! Remember, the `flask-webdev` repo directory you made earlier will be *the* place to keep your first Flask app. Next, you'll ready your virtual environment for the journey ahead.

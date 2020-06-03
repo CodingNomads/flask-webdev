@@ -13,8 +13,10 @@ Setup should be pretty straightforward. Before you get started with development,
 To install any of these suggested extensions, look for the extensions icon:
 ![VSCode Extensions](../images/extensions-view-icon.png)
 
-There's also a file auto save feature in VSCode's settings. To toggle it, head to `File -> Preferences -> Settings...` and search for "Files: Auto Save".
+There's also a file auto save feature in VSCode's settings. To toggle it, head to `File -> Preferences -> Settings...` and search for "Files: Auto Save". For normal users who want to save their files manually every once in a while, then this feature is not recommended.
 
 [//]: # (More to add on the layout)
+
+___
 
 In the next section, you'll add some code to accompany your lonely `README.md` file. Ready?

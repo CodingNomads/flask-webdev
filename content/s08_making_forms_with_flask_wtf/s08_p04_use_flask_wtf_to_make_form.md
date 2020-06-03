@@ -16,4 +16,6 @@ class NameForm(FlaskForm):
 
 Let's break it down a little further. Your form, `NameForm`, has a text field called `name`. It also has a submit button called `submit`. A fancy web form wouldn't be as fancy without validators, and Flask-WTF makes checking inputs easy. Validators can be declared within a list inside `*Field` constructors, and one example is the `DataRequired` validator. The `name` field has this validator, and it means that the information in a `NameForm` cannot be submitted without putting a name in that field. There are also <a href="https://wtforms.readthedocs.io/en/stable/validators.html#built-in-validators" target="_blank">plenty more validators</a> should you need them.
 
+___
+
 What's that? You want to see the form really bad, huh? You want to see it work before your eyes? To do that, you'll have to render it first, but that part might be easier than the above! Nevertheless, head on over to the next lesson for your next mission.

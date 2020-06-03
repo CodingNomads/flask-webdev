@@ -1,5 +1,3 @@
-[//]: # (Will add this lesson to introduce dynamic routes, which is useful for the templates section)
-
 How'd you feel about the basics of routes? There's much more, but for now let's introduce you to dynamic routes, then you can take a shot at making a few more yourself for some practice. Haven't you ever noticed that when browsing SoundCloud or Facebook, whenever you checked out some random guy's profile that you could see something like these in the address?
 
 ```
@@ -32,5 +30,3 @@ Now try a few of your own dynamic routes. Try these suggestions:
 
 <div class="alert alert-warning" role="alert"><strong>Note: </strong>Some of the examples in this course won't be part of the main app, but you'll make it clear when it is or isn't.
 </div>
-
-[//]: # (To Martin: Is this a fair warning, and if so, do you have suggestions for how to indicate something is or isn't part of the main app?)

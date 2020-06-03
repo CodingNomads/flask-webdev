@@ -49,4 +49,6 @@ Oh, and one more thing! Jinja also includes filters which can go after a variabl
 | `trim`         | Strip leading and trailing characters         |
 | `upper`        | Uppercase all characters                      |
 
+___
+
 You just learned about variables in Jinja, but don't you want more *control* over your templates? You're in luck, because in the next section, you'll apply control structures to your templates.

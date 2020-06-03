@@ -68,8 +68,7 @@ Whether or not you already tried rendering your `NameForm` from "the hard way" t
 
 Whenever this template is rendered for the first time, it will show a message "Welcome to Ragtime, Anyonymous!" plus a nice little greeting. It will also show your newly rendered form you defined! Coolio.
 
-[//]: # (Of course the form can't be shown yet because there's no view function...)
+But before you can see it, you'll need to change your `index()` view function. Back to the code above, the only thing that looks a little fishy is the conditional starting with `{% if name %}`. Where did that `name` come from? It's not the same as `form.name`, and how can you possibly show a name if you haven't even entered one into the `form.name` field yet?
 
-![](../images/placeholder.png)
-
-The only thing that looks a little fishy is the conditional starting with `{% if name %}`. Where did that `name` come from? It's not the same as `form.name`, and how can you possibly show a name if you haven't even entered one into the `form.name` field yet? This is a mystery that will have to be solved in the next lesson!
+___
+This is a mystery that will have to be solved in the next lesson!

@@ -12,4 +12,6 @@ Although you may not want to admit it, you've seen them. Errors. Even some you'v
 
 When you hit a "Not Found" error, that just means you went to a page that the server can't give you because, well, it can't find it! Whenever that happens, the HTTP response includes a status code of 404. "Internal Server Error" means the server got into a mess on its own and can't show you whatever you wanted to see, and the HTTP response includes status code 500. The "Forbidden" error? That's forbidden to talk about... but if you really must know, it means you don't have the ability to see it, and the HTTP status code is 403.
 
+___
+
 In the next sections, you'll build the routes needed to process these errors and the templates to show them. No one likes ominous messages like "404 not found"! Yikes. We can fix those easily with just a few more with templates and routes.

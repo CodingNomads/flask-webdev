@@ -1,4 +1,4 @@
-Alright Flask cadets, it's time for your first mission. Your mission, should you choose to accept it, is to define three routes in your Flask application.
+Alright Flask cadet, it's time for your first mission. Your mission is to define three routes in your Flask application.
 
 The first route shall be for an "about" page that was shown in the last lesson, but this time, write a blurb about either
 - what you hope to get out of this course, or

@@ -15,7 +15,7 @@ Make a new template called `zodiac.html` and make it inherit from the base templ
 
 #### Flash a Message
 
-Once the user submits the form, have the webapp flash a message that displays what their Zodiac sign or Chinese Zodiac animal is. This will involve working with some `datetime.date`s, but it should be a simple calculation otherwise. If you have trouble with the `datetime` library and need help, you can ask a question on our forum or ask your mentor for help.
+Once the user submits the form, have the webapp flash a message that displays what their Zodiac sign or Chinese Zodiac animal is. This will involve working with some `datetime.date`s, but it should be a simple calculation otherwise. If you have trouble with the `datetime` library and need help, you can ask a question on our <a href="https://forum.codingnomads.co/c/courses/flask-webdev/33" target="_blank">forum</a> or ask your mentor for help.
 
 #### Have Fun!
 

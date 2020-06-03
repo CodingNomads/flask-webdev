@@ -12,4 +12,6 @@ That's where **web forms** come in. These things are as old as the internet and 
 
 Making form components with HTML is straightforward, but then there's validating. For example, "wood" isn't exactly a flavor of ice cream... and hang on, how do we get all this functionality using Python?
 
+___
+
 For that there is Flask-WTF! Don't let the name fool you, as it makes the making of forms pretty darn easy and painless. You'll learn about this tool in the next lesson.
