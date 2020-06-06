@@ -66,11 +66,12 @@ With the new and improved view function, you can add a nice personalized greetin
 
 Once you get that all done, you should have a pretty cool app that "knows" which names it's seen and which ones it hasn't! Trying the name "Steve" in the form and hitting submit will result in a page that looks something like this:
 
-![Showing home page with "Mucho gusto!"](../images/placeholder.png)
+![Showing home page with "Mucho gusto!"](../images/database_view_function_1.png)
 
 If "Steve" comes around to the site again and says hello with his own name once more, he'll be greeted with a new message:
 
-![Showing home page with "Enjoy your stay"](../images/placeholder.png)
+![Showing home page with "Enjoy your stay"](../images/database_view_function_2.png)
 
+___
 
 And there you have it, a real working database in harmony with a webpage, as if seven angels were singing in unison. But your simple database will not stay so simple, there will be more to build going forward. So how can you possibly *keep* your data without having to nuke your tables just to update them with additional columns? You'll learn about "migration" next, as soon as you migrate to the next lesson!

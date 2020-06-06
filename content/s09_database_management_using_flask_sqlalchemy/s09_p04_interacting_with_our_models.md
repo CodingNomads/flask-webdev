@@ -90,7 +90,7 @@ You've officially added data to your database! How's it feel? Let's make the mom
 
 Sweet. Now something important to remember about database sessions and committing: if an error occurs when the session is being written to the database, the whole session gets discarded. That just means the database does an "undo" operation on whatever it added to the database from the session you committed. Commit related changes together to avoid any errors.
 
-<div class="alert alert-warning" role="alert"><strong>Note: </strong>A `flask shell` session and a database session are two very different things! The `flask shell` session is how you can interact with the database through the Python interpreter, and gives you a Flask application context. The database session is for the database only, and allows you to queue up data to commit to your database.</div>
+<div class="alert alert-warning" role="alert"><strong>Note: </strong>A <code>flask shell</code> session and a database session are two very different things! The <code>flask shell</code> session is how you can interact with the database through the Python interpreter, and gives you a Flask application context. The database session is for the database only, and allows you to queue up data to commit to your database.</div>
 
 ### Modifying and Deleting Rows
 
@@ -239,5 +239,5 @@ Try it out in a new `flask shell` session:
 >>> User
 <class 'hello.User'>
 ```
-
+___
 And with that, you have now passed Flask-SQLAlchemy 101! Next is Flask-SQLAlchemy 201, where you'll apply what you learned here to your view functions.

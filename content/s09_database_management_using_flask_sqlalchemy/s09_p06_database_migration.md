@@ -74,4 +74,6 @@ INFO [alembic.migration] Running upgrade None -> 5f15cbadc711, initial migration
 
 So what's the difference between an upgrade versus nuking the database and starting fresh with a `db.create_all()`? Well, the difference is with an upgrade, you still have your data, because it makes all the changes like adding columns without removing any content.
 
-You've made it to the end of your primer on databases in a webapp, congratulations! While this section only covered the basics, databases and migrations can get pretty complicated pretty quickly, so don't worry if you get stuck. There's always help on our forums and if you have a mentor, you can ask them, too. Do you know what else can get complicated? Webapps themselves, and in the next section, you will discover how to mitigate some of that challenges that complexity will inevitably bring.
+___
+
+You've made it to the end of your primer on databases in a webapp, congratulations! While this section only covered the basics, databases and migrations can get pretty complicated pretty quickly, so don't worry if you get stuck. There's always help on our <a href="https://forum.codingnomads.co/c/courses/flask-webdev/33" target="_blank">forum</a> and if you have a mentor, you can ask them, too. Do you know what else can get complicated? Webapps themselves, and in the next section, you will discover how to mitigate some of that challenges that complexity will inevitably bring.

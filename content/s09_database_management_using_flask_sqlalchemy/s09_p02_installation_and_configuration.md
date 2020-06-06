@@ -46,4 +46,6 @@ The `SQLALCHEMY_TRACK_MODIFICATIONS` key is already `False` by default, but it's
 
 Once that's all done, Flask-SQLAlchemy is initialized just like any other Flask extension.
 
+___
+
 And with that, you should be good to go! Next you'll learn about models and relationships. No no, not like Angelina Jolie and Brad Pitt. Anyway, you'll see what that means in the next lesson.

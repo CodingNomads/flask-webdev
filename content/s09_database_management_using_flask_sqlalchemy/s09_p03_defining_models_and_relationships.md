@@ -84,5 +84,6 @@ There are a few other relationship options:
 
 Really cool stuff, right?! If it still hasn't sunken in, that's no problem, with practice you will get the hang of it. One thing to note is that in there's a somewhat rare chance that `db.relationship()` won't be able locate the foreign key by itself. For example, it could happen when you define two `Role` foreign keys in the `User` model. It can't be sure which one you might mean, so giving it additional arguments to remove any ambiguity should solve the problem.
 
+___
 
-You just got through the basics models and relationships! Does it feel like boot camp? Good, that means your learning. Now gimme 20 pushups, then carry on to the next lesson.
+You just got through the basics models and relationships! Does it feel like boot camp? Good, that means you're learning. Now drop and gimme 20 pushups, then carry on to the next lesson.
