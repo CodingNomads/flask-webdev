@@ -64,11 +64,11 @@ With the new and improved view function, you can add a nice personalized greetin
 {% endblock page_content %}
 ```
 
-Once you get that all done, you should have a pretty cool app that "knows" which names it's seen and which ones it hasn't! Trying the name "Steve" in the form and hitting submit will result in a page that looks something like this:
+Once you get that all done, you should have a pretty cool app that "knows" which names it's seen and which ones it hasn't! Trying the name "Gary the Snail" in the form and hitting submit will result in a page that looks something like this:
 
 ![Showing home page with "Mucho gusto!"](../images/database_view_function_1.png)
 
-If "Steve" comes around to the site again and says hello with his own name once more, he'll be greeted with a new message:
+If "Gary the Snail" comes around to the site again and says hello with his own name once more, he'll be greeted with a new message:
 
 ![Showing home page with "Enjoy your stay"](../images/database_view_function_2.png)
 

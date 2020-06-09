@@ -116,6 +116,7 @@ To delete a row, you use the `db.session.delete()` method. The phone rings, you 
 Let's take a quick break! You can even leave your `flask shell` session if you would like. Maybe grab a quick snack or coffee or pet your cat.
 
 ![Intermission](https://cdn.pixabay.com/photo/2015/03/15/09/35/intermission-674178_960_720.png)
+
 Please adjust your television set as needed. BEEEEEEEEEEEEEEP
 
 ### Querying Rows
@@ -160,12 +161,12 @@ So if you're ever curious what SQLAlchemy is actually doing to filter your data,
 
 | Filter Method | What It Does                                                         |
 | :------------ | :------------------------------------------------------------------- |
-| filter()      | Adds an additional filter to original query                          |
-| filter_by()   | Adds an additional equality filter to original query                 |
-| group_by()    | Groups the results of original query according to the given criteria |
-| limit()       | Limits number of results of original query to the given number       |
-| offset()      | Applies an offset into the list of results of original query         |
-| order_by()    | Sorts the results of original query according to the given criteria  |
+| `filter()`      | Adds an additional filter to original query                          |
+| `filter_by()`   | Adds an additional equality filter to original query                 |
+| `group_by()`    | Groups the results of original query according to the given criteria |
+| `limit()`       | Limits number of results of original query to the given number       |
+| `offset()`      | Applies an offset into the list of results of original query         |
+| `order_by()`    | Sorts the results of original query according to the given criteria  |
 
 Keep in mind that these filters all *return* another query object. That means you can keep stringing filters together to get *really, really* specific. As in, something like this:
 
@@ -178,13 +179,13 @@ That uses two filters side by side, a filter to get only users with the "User" r
 
 | Executor Method | What It Does                                                                                    |
 | :-------------- | :---------------------------------------------------------------------------------------------- |
-| all()           | Returns all results of a query as a list                                                        |
-| first()         | Returns the first result of a query, or None if there are no results                            |
-| first_or_404()  | Returns the first result of a query, otherwise sends a 404 error as the response                |
-| get()           | Returns the row that matches the given primary key, otherwise None                              |
-| get_or_404()    | Returns the row that matches the given primary key, otherwise sends a 404 error as the response |
-| count()         | Returns the result count of the query                                                           |
-| paginate()      | Returns a `Pagination` object that contains the specified range of results                      |
+| `all()`           | Returns all results of a query as a list                                                        |
+| `first()`         | Returns the first result of a query, or None if there are no results                            |
+| `first_or_404()`  | Returns the first result of a query, otherwise sends a 404 error as the response                |
+| `get()`           | Returns the row that matches the given primary key, otherwise None                              |
+| `get_or_404()`    | Returns the row that matches the given primary key, otherwise sends a 404 error as the response |
+| `count()`         | Returns the result count of the query                                                           |
+| `paginate()`      | Returns a `Pagination` object that contains the specified range of results                      |
 
 #### Relationships
 
@@ -200,7 +201,7 @@ You've seen how the `users` attribute in the `Role` table acts just like a Pytho
 
 That output looks pretty similar to the result of a query, doesn't it? Almost as if the users table was filtered by the "User" role, then `all()` was called on that hypothetical query object. Hmmmm... Don't worry, you're not crazy, the `user_role.users` expression is actually a query! Turns out there is an *implicit* query that runs when `user_role.users` is evaluated, and then `all()` is automatically called on that query object to give you the list of users.
 
-What if there was a hhhhhhuuuuuuuuggggggggeeeee list of users? What if you wanted to add *more* filters to it? Maybe return them alphabetically or ordered by who won the most arm-wrestling contests? Let's fix that.
+What if there was a hhhhhhuuuuuuuuggggggggeeeee list of users? What if you wanted to add *more* filters to it? Maybe return them alphabetically or ordered by who won the most arm-wrestling contests? Let's fix that with the `lazy` relationship option.
 
 Go back into `hello.py` and add the `lazy` keyword argument to your `Role` model:
 
@@ -211,7 +212,7 @@ class Role(db.Model):
     # ...
 ```
 
-Fantastic, now you can do some epic sorting:
+Fantastic, now you can do some epic sorting. The `'dynamic'` argument means that SQLAlchemy won't automatically execute the query when you reference the `user` attribute directly:
 
 ```python
 >>> user_role.users.order_by(User.username).all()
@@ -240,4 +241,22 @@ Try it out in a new `flask shell` session:
 <class 'hello.User'>
 ```
 ___
+
 And with that, you have now passed Flask-SQLAlchemy 101! Next is Flask-SQLAlchemy 201, where you'll apply what you learned here to your view functions.
+
+### A Little More On The *lazy* Option
+
+<div class="alert alert-info" role="alert">This mini-lesson is optional. You're free to carry on to the next lesson!</div>
+
+A lot of things in Python employ the concept of "lazy loading," which means that data is accessed from the physical device *only* when it's needed. An example is reading from a huge spreadsheet. Loading all the data all at once can take a long time, but what if you only needed one column of data? Or even one cell in the spreadsheet? Lazy loading lets you load only data you need to load and nothing else so you can save that computation for other things. With SQLAlchemy, you can configure how you want data accessed through a relationship loaded, either lazily, loaded right away, or somewhere in between.
+
+Here's a list of all the values `lazy` can take on and what they do:
+
+| Value       | How It Loads The Data                                                        |
+| :---------- | :--------------------------------------------------------------------------- |
+| `dynamic`   | Rather than loading the items directly the query that can load them is given |
+| `immediate` | Items are loaded when the source object is loaded                            |
+| `joined`    | Items are loaded immediately as a *join*                                     |
+| `noload`    | Items are never loaded                                                       |
+| `select`    | Items are loaded on-demand the first time they are accessed                  |
+| `subquery`  | Items are loaded immediately as a *subquery*                                 |
