@@ -4,7 +4,7 @@ Are you ready to learn the way of the application factory
 
 You should have already made a folder `app/` and moved many of your files there, as well as created a new `__init__.py`. If not, do that because this is the way of the application factory. What this does is it creates a package for your Flask application where all the application code lives including templates and static files. The new `models.py` file in the `app/` folder is where all your models `Role` and `User` will be moved to.
 
-<div class="alert alert-warning" role="alert"><strong>Note: </strong>Did you read that last sentence? :)</div>
+<div class="alert alert-info" role="alert">Did you read that last sentence? :)</div>
 
 When your package is in a working state later in this section, a piece of Python code that exists outside the package can create your app. The name `app` for the folder is just a generic name, it could be anything and it would still be a package.
 
@@ -41,5 +41,7 @@ This new `create_app()` function is a factory function, otherwise known as your 
 Again, this avoids the problem of having to change configuration settings within your *previously single* file. You can instead specify everything you want in a config class. The only drawback is that you can't change the configuration on the fly anymore, but what's gained is that your project is a lot more organized. And take note that your package encapsulates everything in a folder, so you can load your configurations from outside.
 
 The two extensions that are defined don't get initialized right away. Did you notice there's no application instance to hand to them at first? That's okay, though, because they can be initialized later with their own `init_app()` method once an application is created. You'll still want them in the global scope so you can import them from other modules if needed.
+
+___
 
 This is all pretty cool, isn't it? A function that *makes* different "flavors" of your Flask application. First it makes the application, then it initializes the extensions, and finally it... Oh dear, it appears it doesn't do that yet. That is, it is completely missing any semblance of *routes*! Without those, there's nothing to do and nowhere to go except to the next lesson.

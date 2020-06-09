@@ -4,7 +4,7 @@ Configurations, configs, configuration settings. So much config. But rest easy, 
 
 Imagine the future: you have a superb app that does amazing things and your peers and people you don't even know are *surrounding* you because it's such an amazing app! And they want to try it themselves.
 
-![](https://images.unsplash.com/photo-1465199308303-08e6bc3fa443?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80)
+![](https://images.unsplash.com/photo-1465199308303-08e6bc3fa443?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80)
 
 But they would be crushed if you didn't have a `requirements.txt` in your repo. This little file is what allows them to create a virtual environment in Python that is *just like yours*. It gives all the package dependencies your app has with their exact versions you used. If that sounds like an undertaking, you're mistaken, because making and filling out this file is super easy. Just run:
 
@@ -22,6 +22,8 @@ You'll want to include this file in your `flask-webdev` git repo, so don't forge
 
 ### Unit Tests
 
+<div class="alert alert-info" role="alert"><b>Info: </b>This "Unit Tests" subsection is a work in progress.</div>
+
 While there's not a whole lot to test right now, it's still important that you know where you'll put your tests. In this course, you'll use pytest to make your unit tests. This will be a mini crash course in how to get you up and running with pytest and Flask.
 
 #### How Pytest Works
@@ -31,7 +33,7 @@ While there's not a whole lot to test right now, it's still important that you k
 If you haven't already installed pytest, go ahead and run:
 
 ```bash
-(env) $ pytest
+(env) $ pip install pytest
 ```
 
 Pytest might be the easiest unit testing framework in existence. (DISCLAIMER: This is the author's very exaggerated opinion.) It does most of the work of finding your tests *for you*, so all you have to worry about it setting up your files, writing your code, and running the command to test. When you initiate the command `pytest`, it automatically looks for Python files that begin with `test_` and runs those, then looks for `test*` functions. Couldn't be easier, right? That's why you made the `tests/` folder earlier in this section.
@@ -59,4 +61,4 @@ The `conftest.py` file isn't required for pytest to run tests, but it can make y
 
 Way to go! You officially just finished tearing your app apart, then put it back together like some sort of Frankenstein's monster. Except this is your monster, and it's not a monster at all. It's now a well-greased, ready-for-so-much-more webapp that you'll continue developing in a much more orderly fashion. You're ready to battle user authentication, email notifications and verification, and so much more. Onward!
 
-![](https://images.unsplash.com/photo-1568223661110-54147ba680b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
+![](https://images.unsplash.com/photo-1568223661110-54147ba680b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)

@@ -27,4 +27,4 @@ The first thing this does is make the familiar `app`. Did you miss it? You throw
 
 You've taken Flask out for it's initial test drive in the sections up to this point. In this section, you took your app to the pit stop to get it suited up for the complex road ahead. Now that you made some major changes, you'll need to take it for another spin to make everything works as it should. Before you move on, take this time to get your app in a working state. Feel free to go back to the other sections if needed. Then, you're ready to define to define more configurations and finally, learn about some tips to keep your app moving throughout its development!
 
-![](https://images.unsplash.com/photo-1579987323085-529f1a806810?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
+![](https://images.unsplash.com/photo-1579987323085-529f1a806810?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80)
