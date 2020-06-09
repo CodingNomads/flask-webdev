@@ -78,7 +78,7 @@ For that, you'll need to add it to a template. (Starting to see the pattern?) No
 You can save yourself the trouble by adding the flash-message-rendering functionality to the base template, `base.html`. By taking advantage of template inheritance once again, you can display any queued flash messages on any page of your webapp. Since now you understand a bit better, onto the template additions:
 
 ```jinja2
-% block content %}
+{% block content %}
 <div class="container">
     {% for msg in get_flashed_messages() %}
         <div class="alert alert-warning">
@@ -93,5 +93,9 @@ You can save yourself the trouble by adding the flash-message-rendering function
 ```
 
 Flask provides for you a convenient way of getting those queued flash messages through the function `get_flashed_messages()`. What it returns is simply a list of messages. Again, there could be other messages queued that you want the user to see also, so that's why you should use a `for` loop to iterate over them. For now you should only be generating one each time the user submits the `NameForm`. Making use of Bootstrap styles, you can make a popup that shows the message with an 'x' button to dismiss it. One more note: once `get_flashed_messages()` is called, it clears its queue of messages, and the same message will not appear again unless `flash()` is called again for said message.
+
+![message flashing](../images/message_flashing.png)
+
+___
 
 Now you are a master of redirection, user sessions, and message flashing! In the next lesson or two, you will practice all that you've learned from this section.

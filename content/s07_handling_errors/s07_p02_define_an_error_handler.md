@@ -4,7 +4,7 @@ With these handlers, you'll use the Flask `errorhandler` decorator instead of `r
 
 ```python
 @app.errorhandler(403)
-def page_not_found(e):
+def forbidden(e):
     error_title = "Forbidden"
     error_msg = "You shouldn't be here!"
     return render_template('error.html',

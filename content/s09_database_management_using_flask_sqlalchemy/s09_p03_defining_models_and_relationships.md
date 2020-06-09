@@ -33,8 +33,8 @@ Great, you've got a couple of nice looking models now! Roles will be talked abou
 
 After `__tablename__` are the attributes of the model, which are instances of the `db.Column` helper class. Every `db.Column` has a type, and Flask SQLAlchemy gives you helper classes for those, too. The `Integer` and `String` column types have been defined here, but there are many others. Here are the most common:
 
-| Type name   | Python type       | Description                                          |
-| :---------- | :---------------- | :--------------------------------------------------- |
+| Type name     | Python type       | Description                                          |
+| :------------ | :---------------- | :--------------------------------------------------- |
 | `Boolean`     | bool              | True or False value                                  |
 | `DateTime`    | datetime.datetime | Date and time value                                  |
 | `Float`       | float             | Floating-point number                                |
@@ -46,8 +46,8 @@ After `__tablename__` are the attributes of the model, which are instances of th
 
 After the first argument, other configuration options can be specified for a column. Some of them are:
 
-| Option      | Description                                                         |
-| :---------- | :------------------------------------------------------------------ |
+| Option        | Description                                                         |
+| :------------ | :------------------------------------------------------------------ |
 | `default`     | Default value for column                                            |
 | `index`       | If True, create an index for this column for more efficient queries |
 | `nullable`    | If True, allow empty values, otherwise don't allow empty values     |
@@ -80,15 +80,15 @@ The `users` attribute of `Role` represents all the users that have a particular 
 
 There are a few other relationship options available in SQLAlchemy:
 
-| Option name   | What It Does                                                                   |
-| :------------ | :----------------------------------------------------------------------------- |
-| `backref`     | Adds a back reference in the other model in the relationship                   |
-| `lazy`        | Specifies how the data for the related items is to be loaded                   |
-| `order_by`    | Specifies the ordering used for the items in the relationship                  |
-| `primaryjoin` | Specifies the join condition between the two models explicitly                 |
-| `secondary`   | Specify the name of the association table to use in many-to-many relationships |
-| `uselist`     | If set to `False`, use a scalar instead of a list                              |
-| secondaryjoin | Specify the secondary join condition for many-to-many relationships            |
+| Option name     | What It Does                                                                   |
+| :-------------- | :----------------------------------------------------------------------------- |
+| `backref`       | Adds a back reference in the other model in the relationship                   |
+| `lazy`          | Specifies how the data for the related items is to be loaded                   |
+| `order_by`      | Specifies the ordering used for the items in the relationship                  |
+| `primaryjoin`   | Specifies the join condition between the two models explicitly                 |
+| `secondary`     | Specify the name of the association table to use in many-to-many relationships |
+| `uselist`       | If set to `False`, use a scalar instead of a list                              |
+| `secondaryjoin` | Specify the secondary join condition for many-to-many relationships            |
 
 
 Possible values are  select (items are loaded on demand the first time they are accessed),  immediate (items are loaded when the source object is loaded),  joined (items are loaded immediately, but as a join),  subquery| (items are loaded immediately, but as a subquery),  noload (items are never loaded), and  dynamic (instead of loading the items, the query that can load them is given).
