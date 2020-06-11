@@ -48,6 +48,8 @@ Then, summon your webapp! Your index page will have a subset of all the composit
 
 ### Pagination Widget
 
+This is a widget you can make once, then you won't have to keep fidgeting just to navigate to a new page.
+
 #### Pagination Attributes and Methods
 
 So why did you need to add a `pagination` object to the `index.html` template? Because it has a bunch of useful properties and methods! They are especially for controlling and displaying the page numbers from the user's perspective via a **pagination widget**. You probably noticed that there was no way to change the page unless you manually typed in the "page" argument in the query string. Here's some quick info on the attributes and methods of the `pagination` object:
@@ -143,7 +145,8 @@ With your macro all done, you can use now use it in your `index.html` template! 
 
 Here's what your pagination widget should look like:
 
-![](../images/[placeholder.png])
+![](../images/pagination_widget.png)
+
 Page numbers may vary. :)
 
 ___

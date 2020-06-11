@@ -1,6 +1,6 @@
 So by this point, creating your compositions works. Now you're ready to show them in all their glory on the index page. In this lesson, it's your chance to prove your templating capabilities once more. A friendly reminder about our <a href="https://forum.codingnomads.co/c/courses/flask-webdev" target="_blank">community forum</a>, a resource to get your questions answered! And if you have one, your mentor, too.
 
-[//]: # (TODO: Styling stuff, css static)
+[//]: # (TODO? Styling stuff, css static)
 
 ### Showing Compositions
 
@@ -18,12 +18,12 @@ Here's what you'll want to show for each composition:
 Here's a suggested way to go about it in your template:
 
 ```jinja2
-<ul> {# All compositions #}
-    <li> {# Single composition #}
-        <div> {# Avatar #} </div>
-        <div> {# Composition content #}
-            <div>{# date #}</div>
-            <div>{# title #}</div>
+<ul class="compositions"> {# All compositions #}
+    <li class="composition"> {# Single composition #}
+        <div class="composition-thumbnail"> {# Avatar #} </div>
+        <div class="composition-content"> {# Composition content #}
+            <div class="composition-date">{# date #}</div>
+            <div class="composition-artist">{# title #}</div>
             {# ... #}
         </div>
     </li>
@@ -32,7 +32,7 @@ Here's a suggested way to go about it in your template:
 
 ### Styling
 
-It's okay if you're not a CSS styling expert. For this course, we don't expect you to make something that looks perfect and professional. As long as you can get the information in the page and make it readable, that is good enough!
+It's okay if you're not a CSS styling expert. For this course, we don't expect you to make something that looks perfect and professional. As long as you can get the information in the page and make it readable, that is good enough! (Yours truly admits to once having ugly pages...)
 
 With this in mind, here are some optional CSS classes you can include in your `app/static/styles.css` file:
 
@@ -86,12 +86,12 @@ Keep in mind that if the user doesn't have permission to publish compositions, t
 
 Once your index page is done, it should appear similar to this:
 
-![new index page](../images/placeholder.png)
 
-Don't worry if it doesn't look as pretty. The point of the course is for you to learn how to develop a web app in Flask, which you are doing. :)
+Don't worry if yours doesn't look as pretty, or if you don't have as many words in your compositions. The point of the course is for you to learn how to develop a web app in Flask, which you are doing. :)
 
+![new index page](../images/new_index_page.png)
 ___
 
 Are there a few "unicorns" sharing their musical creations on your index page? Even if it's not quite that sophisticated, as long as your fake users compositions are visible and readable, you can call that a win! But isn't it a strain on your wrists to add all those fake users or compositions? What if you could generate a bunch of fake data just for quicker development...
 
-![](https://images.unsplash.com/photo-1529078155058-5d716f45d604?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80)
+![](https://images.unsplash.com/photo-1529078155058-5d716f45d604?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)

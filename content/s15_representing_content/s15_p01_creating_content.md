@@ -28,7 +28,6 @@ class ReleaseType:
 
 
 class Composition(db.Model):
-    """What our database holds"""
     __tablename__ = 'compositions'
     id = db.Column(db.Integer, primary_key=True)
     release_type = db.Column(db.Integer)
@@ -102,12 +101,12 @@ You see, `current_user` is just like `current_app` in that it's a *proxy* for th
 Before you go about accommodating any compositions in your `index.html` template, you can first make sure your compositions can be created from your form. Without needing to render the compositions yet, you can test that a `Composition` can be created from your form by putting something like this somewhere in your template:
 
 ```jinja2
-{{ len(compositions) }}
+{{ compositions|length }}
 ```
 
 This will show you how many compositions are currently in the database. It's only temporary for ensuring everything thus far works. It should all look something like this:
 
-![](../images/placeholder.png)
+![How many musics does user "moonpuppies" have?](../images/number_of_compositions.png)
 
 ___
 

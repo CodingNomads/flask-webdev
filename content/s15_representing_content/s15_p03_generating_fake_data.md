@@ -2,7 +2,7 @@ If you're reading this, you probably have *some* data displayed in your index pa
 
 ### Faker
 
-Dictionary defines "faker" as "a person who fakes." When you let two oddly-humanoid hedgehogs loose in a forest, this might happen:
+Dictionary.com defines "faker" as "a person who fakes." When you let two oddly-humanoid hedgehogs loose in a forest, this might happen:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/433jTl_rZB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
