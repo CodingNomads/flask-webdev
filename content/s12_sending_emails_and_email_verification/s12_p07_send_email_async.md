@@ -4,12 +4,15 @@ In the last lesson, you completed all your email functionality and user verifica
 
 No no, that's not the same as "blocking" on Twitter. What is meant by the heading is that the `mail.send()` function in your `email.py` blocks your app until the email is sent, which takes a few seconds. Clearly you don't want that. But why does it block?
 
-Like many Flask extensions, Flask-Mail relies on an application context to be present. You've used the `current_app` object before, and you can use it to reference things like your app's configuration settings *because* there is an application context. Otherwise, using `current_app` wouldn't be possible. The `mail.send()` itself uses `current_app` to send an email. The app, at the point where it invokes `send_email()`, and the `mail.send()` function exist on the same thread, which means Flask-Mail has to finish sending the email before `send_email()` can itself return control to its caller function.
+Like many Flask extensions, Flask-Mail relies on an application context to be present. You've used the `current_app` object before, and you can use it to reference things like your app's configuration settings *because* there is an application context. Otherwise, using `current_app` wouldn't be possible. The `mail.send()` itself uses `current_app` to send an email. The app, at the point where it invokes `send_email()`, and the `mail.send()` function exist on the same thread. That means Flask-Mail has to finish sending the email before `send_email()` can itself return control to its caller function. Emails take *at least* a few seconds to send because a delay is actually part of the technology to help prevent spam.
+
+![How threading works with Flask and Flask-Mail](../images/.png)
 
 To allow emails to be sent in parallel with the app's normal operation—in other words, to prevent blocking of the app by `mail.send()`—you'll need to create another thread just for sending the email. You can make another thread easily with the `threading.Thread` class, but your `mail.send()` will still need an app context!
 
-![Application context not included](https://images.unsplash.com/photo-1576834975354-ee694be1f0d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
-Application context not included
+![Application context not included](https://images.unsplash.com/photo-1576834975354-ee694be1f0d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)
+
+(Application context not included)
 
 ### Adding Some Asynchronicity To Your Life
 

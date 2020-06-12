@@ -67,4 +67,6 @@ You can see how reading the `password` attribute throws an error. You'll also no
 
 One way to ensure your password functionality is working is by writing a unit test! (coming soon)
 
+___
+
 Well done, your very own password hashing and checking functionality is now complete! Now it's time to put them to use. But first, it's a good idea to make `Blueprint` just for authentication. That'll be your job! Details are in the next lesson.

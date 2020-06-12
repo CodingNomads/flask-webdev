@@ -2,7 +2,7 @@ Don't you want your users to have avatars? And no, I don't mean airbenders or al
 
 Unicorns.
 
-![](https://images.unsplash.com/photo-1516486915195-358a5c2b2395?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)
+![](https://images.unsplash.com/photo-1516486915195-358a5c2b2395?ixlib=rb-1.2.1&auto=format&fit=crop&w=317&q=80)
 
 No, I'm not going crazy. Anyway, in this lesson, you'll learn about how you can give each user a unique avatar, or a profile pic they can use to represent themselves.
 
@@ -69,20 +69,42 @@ The method ultimately returns a path directly to the image, where the image is d
 
 ### User Profile Images
 
-To put your users' unicorns in their profiles, all you need to do is:
+To put your users' unicorns in their profiles, the first thing you can do to make your life a little easier is to define a custom CSS class. That way, you can reuse the profile picture in other places, conveniently. This is where the `app/static/` directory comes in. Similar to `app/templates/`, it is a directory that Flask looks for in order to find your custom styles and other assets.
+
+Your custom CSS classes can go in `app/static/styles.css`. Then, you can define these two classes for your users' beautiful unicorns:
+
+```css
+.profile-thumbnail {
+    position: absolute;
+}
+.profile-header {
+    min-height: 260px;
+    margin-left: 280px;
+}
+```
+
+The first class is meant to be used as a class for your users' profile pics to help position the image. While you're at it, you can define a second class for all the other profile information to give it a little better positioning.
+
+Now, all you need to do is apply those styles!:
 
 ```jinja2
+{# user.html #}
 <img class="img-rounded profile-thumbnail" src="{{ user.unicornify() }}">
-<div class="page-header">
-    {# All the user profile info from before #}
+<div class="profile-header">
+    {# All the user profile info from before... #}
 </div>
 ```
 
-The `img-rounded` CSS class makes the image look a little more professional with rounded corners and the `profile-thumbnail` class helps to position the image on the page a little better. To make your navigation bar a little fancier, you can add a dropdown and add a mini-thumbnail version of a user's unicorn like this:
+The `img-rounded` CSS class makes the image look a little more professional with rounded corners.
 
-[//]: # (TODO: need to define styles in styles.css, and have it referenced in the template)
+You still need to *link* your custom styles in order for them to be applied. And, to make your navigation bar a little fancier, you can add a dropdown and add a mini-thumbnail version of a user's unicorn. Both of these changes go in your `base.html` so that all your templates get your custom styles and the navigation bar addition:
 
 ```jinja2
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
 {# ... #}
 {% if current_user.is_authenticated %}
 <li class="dropdown">
@@ -101,18 +123,20 @@ The `img-rounded` CSS class makes the image look a little more professional with
 {% endif %}
 ```
 
-Fancy, huh? The dropdown is possible thanks to Bootstrap's `dropdown-toggle` CSS class.
+Fancy, huh? The dropdown is possible thanks to Bootstrap's `dropdown-toggle` and `dropdown-menu` CSS classes.
 
-![](../images/placeholder.png)
+![Dropdown for user profile](../images/user_navbar_dropdown.png)
+
+<div class="alert alert-warning" role="alert"><strong>Note: </strong>While being able to change one's password or email is a nice feature, that'll be up to you to implement. Nothing personal, just that this course is more focused on building webapps with <i>Flask</i> and not full websites in general.</div>
 
 ### Generating Hashes Takes Work
 
 What do all serious Bitcoin miner's have in common? Fans. Lots and lots of fans to cool the machines down.
 
-![](https://images.unsplash.com/photo-1586772002345-339f8042a777?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80)
+![](https://images.unsplash.com/photo-1586772002345-339f8042a777?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)
 Modern day miners
 
-Even hashes for unicorns takes computational work, and not something you want your server to do every time it needs to generate an image. Otherwise, this might happen:
+Even hashes for unicorns take computational work, and not something you want your server to do every time it needs to generate an image. Otherwise, this might happen:
 
 ![](../images/server_on_fire.png)
 
@@ -140,4 +164,4 @@ By implementing this, you've in effect made a *hash cache*. Now impress your fri
 
 ___
 
-You just experienced a miracle. No, two miracles! The first is that you are done with the user profile section. The second is that you saw not one, but two unicorns! In the next section, you'll see even more unicorns as you build and generate the content of your webapp.
+You've just experienced a miracle. No, two miracles! The first is that you are done with the user profile section. The second is that you saw not one, but two unicorns! In the next section, you'll see even more unicorns as you build and generate the content of your webapp.

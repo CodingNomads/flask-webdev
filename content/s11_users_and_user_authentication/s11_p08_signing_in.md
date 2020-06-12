@@ -2,15 +2,15 @@ With that login form you just made, you're ready to use it now to sign in your f
 
 ### Hold Up!
 
-Before you get too far, you'll need to add one more column to your `User` model. This is a column for their email since people usually remember that vs the possibly of hundreds of usernames they use on other sites. (Please don't be like me and use hundreds of usernames on other sites...)
+Before you get too far, you'll need to add one more column to your `User` model. This is a column for their email since people usually remember that versus the possibly of hundreds of usernames they use on other sites. (Please don't be like me and use hundreds of usernames on other sites...)
 
 ```python
-class Fan(UserMixin, db.Model):
+class User(UserMixin, db.Model):
     # ...
-    email = db.Column(db.String(64), unique=True, index=True)
+    email = db.Column(db.String(65), unique=True, index=True)
 ```
 
-![](https://images.unsplash.com/photo-1586008952500-10707a1213d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
+![](https://images.unsplash.com/photo-1586008952500-10707a1213d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)
 
 ### Logging In
 
@@ -25,7 +25,8 @@ from flask_login import login_user
 
 # route to '/login'
 def login():
-    #form is validated...
+    # form is created
+    # form is validated...
         # Query the database for the user
         # if the user exists and the password is correct...
             login_user(user, form.remember_me.data)
@@ -38,6 +39,8 @@ def login():
 ```
 
 Of course, you'll need your `login()` view function to create the form, and the `login.html` template will render. A GET request is sent to see the page, then the user types in their info, presses submit and a POST request is sent to the `/login` page. Assuming the user exists and the password is right, then the logging in takes place.
+
+![What your login form would look like](../images/login.png)
 
 Flask-Login's `login_user()` function is called, and it takes a `UserMixin` object as it's first argument. But since your `User` model *is* a `UserMixin` you can pass in the `user` that comes from your database query. The next argument is whether or not the user should be remembered even after the browser window is closed. `True` means yes, do "remember me" after the browser is closed. Technically, that means a long-term cookie is to be set in the user's browser that Flask-Login can load later on to restore the user session.
 
@@ -80,7 +83,7 @@ To enable a user to login from the home page, you can edit `base.html` to add a 
 {# ... #}
 ```
 
-![Show Log In in navbar](../images/placeholder.png)
+![Show Log In in navbar](../images/log_in_navbar.png)
 
 The `current_user` context variable is a convenient way to access the current `User` that is logged in. It's automatically available not only for templates, but also for view functions. If there's no user logged in, then the `current_user` is an `AnonymousUser` object.
 
@@ -110,7 +113,7 @@ Before you can test a login, you need a login to login with first! If you don't 
 
 Now you should be all set to test your login. Launch your Flask app, then navigate to `'/auth/login'` manually or though the "Log In" link you just made. Then, log in as your user and watch as you are greeted! Feels warm and fuzzy, doesn't it?
 
-![Show greeting from successful login](../images/placeholder.png)
+![Show greeting from successful login](../images/login_greeting.png)
 
 ### How Flask-Login Works
 
@@ -128,8 +131,6 @@ Flask-Login is pretty simple. Deceivingly simple... What's it *really* doing? Wh
     d. The new value of `current_user` is now defined and the `index.html` template can render it.
 
 ![](../images/Flask-Login.png)
-
-[//]: # (Any feedback on the diagram?)
 
 ### Unit Tests
 

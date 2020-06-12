@@ -106,6 +106,18 @@ def for_moderators_only():
     return "Greetings, moderator!"
 ```
 
+To demonstrate, try logging out or logging in as a regular ol' user. Then try to access the admin page at `localhost:5000/admin`. You'll see something like this:
+
+![That's not for you to see!](../images/admin_page_1.png)
+
+Now log in with your admin account, the one that has the administrator's email. Register it first if you need to.
+
+![Log in as admin](../images/admin_page_2.png)
+
+Then, try accessing the admin page, and you will have access!
+
+![Admin can see page](../images/admin_page_3.png)
+
 ### Injecting Permissions
 
 While that heading might sound like someone can acquire certain permissions through a medical procedure, that's not what's meant here. Not people or users, but templates. The reason? First, a bit of background. Although your users can be prevented from seeing certain pages entirely via your new decorators, sometimes you want them to see the page but not everything in it. Not certain buttons or perhaps your users see different text depending on what permissions they have. You won't want to put in the literal permission values just to check permissions. What if they change?!

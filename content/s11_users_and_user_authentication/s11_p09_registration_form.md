@@ -4,7 +4,7 @@ This registration form will require a lot of validation since you don't want a u
 
 ### Registration Form
 
-The new `RegistrationForm` will go in the `app/auth/views.py` file. Like I said, there's going to
+The new `RegistrationForm` will go in the `app/auth/views.py` file:
 
 ```python
 from wtforms import PasswordField

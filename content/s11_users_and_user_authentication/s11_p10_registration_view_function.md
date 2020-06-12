@@ -9,8 +9,8 @@ If you haven't already, you'll want to make your `auth/register.html` template n
 3. After the form is validated, create the `User` based on the info provided and add it to the database.
 4. Flash a message that the user can now login, then redirect them to the login page.
 
+![What your registration form might look like](../images/registration_form.png)
 ___
-
 
 There's plenty of *validation* in your registration, but not much *verification*. What if the user's email isn't even real? Or \*gasp\* not owned by that person!? In the next section, you'll learn about Flask-Mail, sending emails, and verifying users with confirmation tokens.
 

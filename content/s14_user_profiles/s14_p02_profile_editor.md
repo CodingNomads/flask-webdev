@@ -31,7 +31,7 @@ def edit_profile():
         current_user.bio = form.bio.data
         db.session.add(current_user._get_current_object())
         db.session.commit()
-        flash('You successfully updated your profile! Loogks great.')
+        flash('You successfully updated your profile! Looks great.')
         return redirect(url_for('.user', username=current_user.username))
     form.name.data = current_user.name
     form.location.data = current_user.location
@@ -57,9 +57,9 @@ Of course, you wouldn't want another user to edit just anyone's profile, so a ch
 
 Your user editor, and new "Profile" navigation bar link, will look something like this:
 
-![](../images/placeholder.png)
+![User editor and profile navigation bar](../images/edit_profile.png)
 
-### Make A Administrator-Level Profile Editor
+### Make An Administrator-Level Profile Editor
 
 Ready to challenge yourself to next level? Actually, an administrator is two levels above a user, so yeah, the next two levels. Admins can change any user's information, and that includes their username, confirmed status, and role, plus all the profile information. Great power requires great responsibility, so use wisely.
 
@@ -92,9 +92,11 @@ Yes, this time you have a dynamic route, where the `id` is the user's identifica
 
 Lastly, you'll need to add another button to the `user.html` template so that the admin can edit a profile or user's information. You can use the `"btn btn-danger"` Bootstrap style for the `class` attribute of the `<a>` tag.
 
-When all is said and written, your admin profile editor and button should look like this:
+When all is said and written, your admin profile editor button and form should look like this:User editor and profile navigation bar
 
-![](../images/placeholder.png)
+![](../images/edit_profile_admin_button.png)
+
+![Edit profile, what admin sees](../images/edit_profile_admin_form.png)
 
 ___
 

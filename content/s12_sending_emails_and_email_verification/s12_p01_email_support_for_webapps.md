@@ -18,4 +18,4 @@ To add email support to your app, you'll only need two things:
 
 As for the SMTP server, you *could* host one yourself. However, for development, it's *much* easier to use an external server. In the next lesson, you'll be guided through the steps to setup a Google Gmail account so you can start playing around with emails right away. You'll learn about the settings in the lesson after that. But first, let's start with getting you set up with a secondary email account!
 
-![](https://images.unsplash.com/photo-1534803522048-835d05301b08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2018&q=80)
+![](https://images.unsplash.com/photo-1534803522048-835d05301b08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)
