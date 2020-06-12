@@ -44,7 +44,7 @@ You're itching to see your fake content already, aren't you? With your basic pag
 
 Then, summon your webapp! Your index page will have a subset of all the compositions created. Be amazed by the complete gibberish that is displayed:
 
-![](../images/placeholder.png)
+![](../images/new_index_page.png)
 
 ### Pagination Widget
 

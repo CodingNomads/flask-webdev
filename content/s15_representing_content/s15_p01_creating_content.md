@@ -2,7 +2,7 @@ Many social media websites have a way to submit some form of content to the site
 
 ### "Content" Can Mean A Lot Of Things
 
-![writing content](https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)
+![writing content](https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)
 
 Yes, that is true. Often times in social media, the general word for a submittal of content is called a "post." You can make a *post* on your Facebook wall to share something with your audience. You can make a *post* on Reddit to complain about <a href="https://www.reddit.com/r/grilledcheese/comments/2or1p3/you_people_make_me_sick/" target="_blank">melts</a>. You can also *post* (the verb) your newest song on SoundCloud. For you and your app, it can be anything you want! But for the purposes of this course and making it more simple for you, a *post* will be called a **composition**.
 
