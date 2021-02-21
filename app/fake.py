@@ -4,6 +4,11 @@ from faker import Faker
 from . import db
 from .models import User, Composition, Comment
 
+def create_fake_data():
+    users()
+    compositions()
+    comments()
+
 def users(count=20):
     fake = Faker()
     i = 0

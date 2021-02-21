@@ -1,8 +1,18 @@
+from app.api import decorators
 import bleach
 from functools import wraps
 from flask import abort
 from flask_login import current_user
 from .models import Permission
+
+def log_visit(logger):
+    def decorator(f):
+        @wraps(f)
+        def decorated_function(*args, **kwargs):
+            logger.debug(f"Visiting function {f.__name__}()")
+            return f(*args, **kwargs)
+        return decorated_function
+    return decorator
 
 def clean_and_linkify(f):
     @wraps(f)
