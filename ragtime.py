@@ -1,5 +1,5 @@
 import os
-from app import create_app, db, mail, fake
+from app import create_app, db, mail
 from app.models import User, Role, Permission, Composition, Follow, Comment
 from flask_migrate import Migrate, upgrade
 
