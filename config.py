@@ -31,6 +31,16 @@ class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_DEV_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
+    
+    @classmethod
+    def init_app(cls, app):
+        Config.init_app(app)
+
+        import logging
+        from sys import stdout
+        console_handler = logging.StreamHandler(stdout)
+        console_handler.setLevel(logging.DEBUG)
+        app.logger.addHandler(console_handler)
 
 
 class TestingConfig(Config):

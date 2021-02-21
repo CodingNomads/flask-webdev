@@ -6,9 +6,7 @@ from ..email import send_email
 from ..models import User
 from .. import db
 from ..decorators import log_visit
-import logging
 
-_LOGGER = logging.getLogger(__name__)
 
 # TODO: Figure out why it logs me in randomly
 # Could be because user_loader works even if I wipe the db then
@@ -16,7 +14,7 @@ _LOGGER = logging.getLogger(__name__)
 # (my fave is tammy89)
 
 @auth.route('/login', methods=['GET', 'POST'])
-@log_visit(_LOGGER)
+@log_visit
 def login():
     form = LoginForm()
     # We don't want user to see this page if they are already logged in
@@ -35,7 +33,7 @@ def login():
 
 
 @auth.route('/logout')
-@log_visit(_LOGGER)
+@log_visit
 def logout():
     logout_user()
     flash("You've been logged out.")
@@ -43,7 +41,7 @@ def logout():
 
 
 @auth.route('/register', methods=['GET', 'POST'])
-@log_visit(_LOGGER)
+@log_visit
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
@@ -76,7 +74,7 @@ def register():
 
 @auth.route('/confirm/<token>')
 @login_required
-@log_visit(_LOGGER)
+@log_visit
 def confirm(token):
     if current_user.confirmed:
         flash("You're already confirmed, silly!")
@@ -90,7 +88,7 @@ def confirm(token):
 
 
 @auth.before_app_request
-@log_visit(_LOGGER)
+@log_visit
 def before_request():
     if current_user.is_authenticated:
         current_user.ping()
@@ -103,7 +101,7 @@ def before_request():
 
 
 @auth.route('/unconfirmed')
-@log_visit(_LOGGER)
+@log_visit
 def unconfirmed():
     if current_user.is_anonymous or current_user.confirmed:
         return redirect(url_for('main.home'))
@@ -112,7 +110,7 @@ def unconfirmed():
 
 @auth.route('/confirm')
 @login_required
-@log_visit(_LOGGER)
+@log_visit
 def resend_confirmation():
     token = current_user.generate_confirmation_token()
     send_email(current_user.email,

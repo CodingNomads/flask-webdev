@@ -1,4 +1,3 @@
-from logging import getLogger
 from flask import session, render_template, redirect, url_for, flash, current_app, request, abort, make_response
 from flask_login import login_required, current_user
 from . import main
@@ -9,12 +8,8 @@ from ..email import send_email
 from ..decorators import admin_required, permission_required, log_visit
 
 
-import logging
-
-_LOGGER = logging.getLogger(__name__)
-
 @main.route('/', methods=['GET', 'POST'])
-@log_visit(_LOGGER)
+@log_visit
 def home():
     """How the page BEHAVES"""
     form = CompositionForm()
@@ -60,7 +55,7 @@ def home():
 
 
 @main.route('/user/<username>')
-@log_visit(_LOGGER)
+@log_visit
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     compositions = user.compositions.order_by(Composition.timestamp.desc()).all()
@@ -68,7 +63,7 @@ def user(username):
 
 
 @main.route('/composition/<slug>', methods=['GET', 'POST'])
-@log_visit(_LOGGER)
+@log_visit
 def composition(slug):
     composition = Composition.query.filter_by(slug=slug).first_or_404()
     form = CommentForm()
@@ -100,7 +95,7 @@ def composition(slug):
 
 @main.route('/edit/<slug>', methods=["GET", "POST"])
 @login_required
-@log_visit(_LOGGER)
+@log_visit
 def edit_composition(slug):
     composition = Composition.query.filter_by(slug=slug).first_or_404()
     if current_user != composition.artist and \
@@ -125,7 +120,7 @@ def edit_composition(slug):
 
 @main.route('/edit-profile', methods=['GET', 'POST'])
 @login_required
-@log_visit(_LOGGER)
+@log_visit
 def edit_profile():
     form = EditProfileForm()
     if form.validate_on_submit():
@@ -147,7 +142,7 @@ def edit_profile():
 @main.route('/edit-profile-admin/<int:id>', methods=['GET', 'POST'])
 @login_required
 @admin_required
-@log_visit(_LOGGER)
+@log_visit
 def edit_profile_admin(id):
     user = User.query.get_or_404(id)
     form = EditProfileAdminForm(user=user)
@@ -177,7 +172,7 @@ def edit_profile_admin(id):
 @main.route('/follow/<username>')
 @login_required
 @permission_required(Permission.FOLLOW)
-@log_visit(_LOGGER)
+@log_visit
 def follow(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
@@ -196,7 +191,7 @@ def follow(username):
 @main.route('/unfollow/<username>')
 @login_required
 @permission_required(Permission.FOLLOW)
-@log_visit(_LOGGER)
+@log_visit
 def unfollow(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
@@ -213,7 +208,7 @@ def unfollow(username):
 
 # Who my followers are
 @main.route('/followers/<username>')
-@log_visit(_LOGGER)
+@log_visit
 def followers(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
@@ -238,7 +233,7 @@ def followers(username):
 # Who I'm following
 # NOTE: Done by student
 @main.route('/following/<username>')
-@log_visit(_LOGGER)
+@log_visit
 def following(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
@@ -262,7 +257,7 @@ def following(username):
 
 @main.route('/all')
 @login_required
-@log_visit(_LOGGER)
+@log_visit
 def show_all():
     resp = make_response(redirect(url_for('.home')))
     resp.set_cookie('show_followed', '', max_age=30*24*60*60) # 30 days
@@ -271,7 +266,7 @@ def show_all():
 
 @main.route('/followed')
 @login_required
-@log_visit(_LOGGER)
+@log_visit
 def show_followed():
     resp = make_response(redirect(url_for('.home')))
     resp.set_cookie('show_followed', '1', max_age=30*24*60*60) # 30 days
@@ -281,7 +276,7 @@ def show_followed():
 @main.route('/moderate')
 @login_required
 @permission_required(Permission.MODERATE)
-@log_visit(_LOGGER)
+@log_visit
 def moderate():
     page = request.args.get('page', 1, type=int)
     pagination = Comment.query.order_by(Comment.timestamp.desc()).paginate(
@@ -298,7 +293,7 @@ def moderate():
 @main.route('/moderate/enable/<int:id>')
 @login_required
 @permission_required(Permission.MODERATE)
-@log_visit(_LOGGER)
+@log_visit
 def moderate_enable(id):
     comment = Comment.query.get_or_404(id)
     comment.disable = False
@@ -310,7 +305,7 @@ def moderate_enable(id):
 @main.route('/moderate/disable/<int:id>')
 @login_required
 @permission_required(Permission.MODERATE)
-@log_visit(_LOGGER)
+@log_visit
 def moderate_disable(id):
     comment = Comment.query.get_or_404(id)
     comment.disable = True

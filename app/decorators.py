@@ -1,18 +1,23 @@
-from app.api import decorators
 import bleach
+import logging
 from functools import wraps
-from flask import abort
+from flask import abort, request, current_app
 from flask_login import current_user
 from .models import Permission
 
-def log_visit(logger):
-    def decorator(f):
-        @wraps(f)
-        def decorated_function(*args, **kwargs):
-            logger.debug(f"Visiting function {f.__name__}()")
-            return f(*args, **kwargs)
-        return decorated_function
-    return decorator
+def log_visit(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        logger: logging.Logger = None
+        msg = f"Visiting function {f.__name__}()."
+        if current_app:
+            logger = current_app.logger
+            if request:
+                msg += f" Endpoint: {request.endpoint}"
+        if logger:
+            logger.debug(msg)
+        return f(*args, **kwargs)
+    return decorated_function
 
 def clean_and_linkify(f):
     @wraps(f)
