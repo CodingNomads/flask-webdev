@@ -1,3 +1,7 @@
+"""
+USE ONLY FOR DEVELOPMENT!
+"""
+
 import sys
 from app import fake, db, create_app
 from app.models import User
@@ -6,7 +10,8 @@ from flask import Flask
 if __name__ == "__main__":
     # be sure to install packages (requirements/dev.txt) and
     # set environment variables or create launch files
-    app: Flask = create_app()
+    # and also create migrations folder via flask db init
+    app: Flask = create_app('development')
     with app.app_context():
         db.create_all()
         if User.query.count() < 20:
