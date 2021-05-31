@@ -8,4 +8,6 @@ Luckily, the developers of Flask thought ahead and came up with **blueprints**. 
 
 Another great thing about blueprints is that they can implement separate bits of functionality to keep your code clean and organized. For example, you can have one that implements most of the user-facing pages, another that handles authentication and registration of accounts, and yet another that defines the Application Programming Interface (API) for your app. You can define a blueprint in a single file, or better yet, inside a package.
 
+___
+
 Opting for blueprints defined in packages makes for better flexibility, so that's what you're gonna do. In fact, you'll make a subpackage inside the `app/` package. Head over to the next lesson to start making your first one!

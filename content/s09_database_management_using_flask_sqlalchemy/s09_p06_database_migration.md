@@ -6,6 +6,8 @@ Of course you need to add more columns to your database models so that you can b
 
 Do you know who David Attenborough is? He's the one who narrates all those nature documentaries. Look him up if you don't know, and imagine him narrating about database migrations. Just like animals, databases have to do migrations, too! "See the data in its natural habitat, doing its migrations as usual."
 
+![](https://images.unsplash.com/photo-1518459384564-ecfd8e80721f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80)
+
 ### Flask-Migrate
 
 <a href="https://flask-migrate.readthedocs.io/en/latest/" target="_blank">Flask-Migrate</a>is a Flask extension that is based on <a href="https://alembic.sqlalchemy.org/en/latest/" target="_blank">Alembic</a>, which is a migration framework for SQLAlchemy. Flask-Migrate is an Alembic wrapper built for Flask, and integrates with the `flask` command. Just like any other flask extension, it can be installed like so:
@@ -74,4 +76,6 @@ INFO [alembic.migration] Running upgrade None -> 5f15cbadc711, initial migration
 
 So what's the difference between an upgrade versus nuking the database and starting fresh with a `db.create_all()`? Well, the difference is with an upgrade, you still have your data, because it makes all the changes like adding columns without removing any content.
 
-You've made it to the end of your primer on databases in a webapp, congratulations! While this section only covered the basics, databases and migrations can get pretty complicated pretty quickly, so don't worry if you get stuck. There's always help on our forums and if you have a mentor, you can ask them, too. Do you know what else can get complicated? Webapps themselves, and in the next section, you will discover how to mitigate some of that challenges that complexity will inevitably bring.
+___
+
+You've made it to the end of your primer on databases in a webapp, congratulations! While this section only covered the basics, databases and migrations can get pretty complicated pretty quickly, so don't worry if you get stuck. There's always help on our <a href="https://forum.codingnomads.co/c/courses/flask-webdev/33" target="_blank">forum</a> and if you have a mentor, you can ask them, too. Do you know what else can get complicated? Webapps themselves, and in the next section, you will discover how to mitigate some of that challenges that complexity will inevitably bring.

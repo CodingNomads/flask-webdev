@@ -4,7 +4,7 @@ Once you get your authentication blueprint in place, it's time to get your `User
 
 Flask-Login is a lightweight Flask extension that makes working with authentication with respect to the user session a piece of cake.
 
-![](https://images.unsplash.com/photo-1559329373-78f77851b979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80)
+![](https://images.unsplash.com/photo-1559329373-78f77851b979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)
 Pictured is the unit of effort required to use Flask-Login to manage user logins
 
 What Flask-Login does in technical speak is it records and updates, as needed, the user's authenticated state in the user session. The user session was talked about in Section 8 on forms, in terms of how information recorded in forms is remembered. Updating the user session with the user's state of authentication means you can know when the user is signed in or not, which you can use to give access to certain pages, or not. There are of course other extensions to manage the user session when it comes to authentication, but Flask-Login is probably the most simple.
@@ -36,5 +36,7 @@ from flask_login import UserMixin
 class User(UserMixin, db.Model):
     # ...
 ```
+
+___
 
 That's it! You're all done, and all of those properties and function above are implemented for you. In the next lesson, you'll learn all you need to know about the Flask-Login login manager, which will use your user mixin.

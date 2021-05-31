@@ -114,8 +114,8 @@ This new `user.html` template extends the `base.html` template, which itself ext
 
 ![image of user page](../images/user_page.png)
 
+___
+
 Hopefully you've been holding tight onto your own bootstraps, as that was a lot to take in. You'll reinforce all that you've learned in this section in the next lesson and throughout the course. So giddy-up and let's get a move on!
 
-![gif of cowbow on horse or something](../images/placeholder.png)
-
-...
+![giddy up!](https://platform.codingnomads.co/learn/draftfile.php/4053/user/draft/432384512/giphy.gif)

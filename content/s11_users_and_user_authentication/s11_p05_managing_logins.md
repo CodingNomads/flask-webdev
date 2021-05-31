@@ -42,7 +42,7 @@ Another cool feature of Flask-Login is the `login_required` decorator. This deco
 ```python
 from flask_login import login_required
 
-@app.route('/top-secret')
+@main.route('/top-secret')
 @login_required
 def top_secret():
     return "Welcome, VIP member! "\
@@ -51,6 +51,12 @@ def top_secret():
 ```
 
 Whenever an unauthenticated user tries to access this VIP page, Flask-Login will send them instead to the login page specified by the `LoginManager.login_view` property.
+
+![Must login first](../images/login_required.png)
+
+But if they are logged in, then they can see the secret content:
+
+![Welcome, VIP member!](../images/login_required2.png)
 
 Now how do you know which decorator to apply first? That's two decorators! Is it by which decorator is prettiest? No, although that would be an interesting metric in a programming language. Think of a decorator as decorating whatever is under it. In the example above, `login_required` decorates `top_secret()`. The `route` decorator then decorates *that* decoration. Ultimately, you want your `top_secret()` view function to *be* a view function, so the `route` decorator should be topmost. The opposite would give the wrong result.
 

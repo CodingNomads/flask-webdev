@@ -1,0 +1,48 @@
+$CATEGORY: Deployment
+
+::s19_q00_paas_stands_for::"PaaS" stands for Platform as a Service {T}
+
+::s19_q01_responsibility::What is your own responsibility in a PaaS? {
+    ~ Server Maintenance
+    ~ Networking
+    = Your Webapp
+}
+
+::s19_q02_advantage_of_paas::What is the advantage of using a PaaS? {
+    ~ %50% less work for you
+    ~ %50% can save on costs
+    ~ %-50% full control over every aspect
+}
+
+::s19_q03_heroku_database::What database does Heroku use by default? {
+    = PostgreSQL
+    ~ MySQL
+    ~ SQLite
+    ~ MariaDB
+    ~ Microsoft SQL
+}
+
+::s19_q04_fee_use_heroku::You have to pay a low monthly fee to put up a webapp on Heroku, if it involves a database {
+    F # Heroku's free tier includes even the use of a database, your app will have slight delays when starting up, though.
+}
+
+::s19_q05_heroku_locally::If you want to work with Heroku locally through your CLI, you need to install their tooling {T}
+
+::s19_q06_heroku_cli::You can use Heroku only through the CLI {F # You can also use it through their web-GUI}
+
+::s19_q07_sensitive_info_heroku::You can add sensitive information to your project setup through the Heroku CLI or their web-GUI {
+    T
+}
+
+::s19_q08_accidentally_push::If you accidentally push any of your secret keys to GitHub, you need to take them off within 1 hour to avoid potential damage {
+    F # If you push any sensitive information to GitHub, you should consider it compromised RIGHT AWAY. Once it has been made public, there is no turning back. Change all your compromised information immediately and don't reuse it anywhere.
+}
+
+::s19_q09_platform_secret_key::[markdown]No matter which platform, the `SECRET_KEY` should be defined inside of the app and committed to version control? {
+    F # The `SECRET_KEY` should be defined in a file not committed to source, or defined as an environment variable
+}
+
+
+::s19_q10_platform_procfile::No matter which platform, you need to add a Procfile so that your app can start {
+    F # This is only necessary for deployment on Heroku
+}

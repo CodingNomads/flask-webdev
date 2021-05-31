@@ -93,4 +93,6 @@ You can call it something like `development_settings.sh`, then run it with
 
 every time you're ready to develop.
 
+___
+
 And now for the final stretch before we get into the nittiest of gritty of the webapp's functionality. Head over to the next lesson to learn about it.

@@ -1,6 +1,6 @@
 You know what roles mean when it comes to a webapp and how users fit in. In this lesson, you'll put your database knowledge more to the test and learn about how to represent roles in your database.
 
-![](https://images.unsplash.com/photo-1526659541029-256e1bf106e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)
+![you have a role](https://images.unsplash.com/photo-1526659541029-256e1bf106e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)
 What's your role?
 
 ### Improved Roles
@@ -122,7 +122,7 @@ Here's who'll get what roles:
 
 ![roles and permissions diagram](../images/Roles_And_Permissions.png)
 
-But what about adding these new permissions to the roles? Don't the roles need to be updated with the new `permissions` values? Yes, and while you can add the individual permissions to the individual roles one at a time, cue this video again:
+But what about adding these new permissions to the roles? Don't the roles need to be updated with the new `permissions` values? Yes, and while you can add the individual permissions to the individual roles one at a time... Cue this video again:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zGxwbhkDjZM?t=25" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

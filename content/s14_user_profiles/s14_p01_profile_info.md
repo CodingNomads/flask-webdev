@@ -112,6 +112,7 @@ With this dynamic route, the view function will look for the user specified and 
 <div class="page-header">
     <h1>{{ user.username }}</h1>
     <table class="table">
+        <tbody>
         <tr>
         <th scope="row">Name</th>
         <td>{% if user.name %}{{ user.name }}{% endif %}</td>
@@ -134,6 +135,7 @@ With this dynamic route, the view function will look for the user specified and 
         <th scope="row">Last seen</th>
         <td>{{ moment(user.last_seen).fromNow() }}</td>
         </tr>
+        </tbody>
     </table>
 </div>
 {% endblock %}
@@ -162,9 +164,8 @@ Your profile and navbar should look something like this:
 
 [//]: # (TODO: picture)
 
-![](../images/placeholder.png)
+![](../images/user_profile.png)
 
 ___
-
 
 Fantastic, you're off and ready with a user profile page! Like any social media site, if you spell something wrong or forget to add a detail, it's good to be able to edit your own profile. So that's what you'll let users do in the next lesson!

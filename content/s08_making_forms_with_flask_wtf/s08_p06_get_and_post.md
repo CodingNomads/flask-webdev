@@ -43,10 +43,11 @@ GET requests *can* be used to send form data to the server, but in practice this
 
 Take another look at the `index()` view function. When navigating to the index page `/` of your Flask webapp, the view function gets called after a GET request so that it can render the form and anything else in the template. At this point, the `validate_on_submit()` function returns `False`, because there is no body and therefore no form data. In other words, `request.form` is empty. Once the user on the other end clicks the submit button, *only then* does the request then become a POST request. The `validate_on_submit()` doesn't return `False` right away, but it could when processing and *validating* the form inputs. Once all input is validated, `name` gets assigned the form input data from the `form.name` field, and that gets passed into your template!
 
-![showing name that was submitted now shows up](../images/placeholder.png)
 
 If you haven't already, go ahead and try out your form. You'll see that you can easily put a name in, hit submit, and be presented with a nice welcome message with your or someone else's name in it. But if you forget to put a name in, the form will tell you once the page loads again.
 
-![form data missing and popup message displayed]()
+![showing name that was submitted now shows up](../images/get_and_post1.png)
 
+![form data missing and popup message displayed](../images/get_and_post2.png)
+___
 I think this crime scene investigation has come to a close. Finally, `name`'s alibi has come to light and you are ready to move on to `redirect`s and message flashing. Well done, detective! The next mystery: how to prevent a warning from popping up once refreshing the page...

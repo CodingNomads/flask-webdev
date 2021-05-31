@@ -27,7 +27,7 @@ Then comes the message body, and you can utilize the `render_template()` to do t
 
 ### Make Your Templates
 
-![arts and crafts time](https://images.unsplash.com/photo-1584515828432-06198c3196a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
+![arts and crafts time](https://images.unsplash.com/photo-1584515828432-06198c3196a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)
 
 It's arts and crafts time! Well, for textual templates, anyway. This is your turn to make both:
 
@@ -84,7 +84,7 @@ Let's put that `send_email()` function to actual use, shall you? Because you're 
 
 Pull up your `register()` view function and take a look at it. Where would you put your `send_email()` functions? That's right, *functions*. You have two template messages, one for welcoming a new user called `welcome` and the other as a notification for yourself called `new_user`. The first will go to your user's email, and the second will go to your app's admin email.
 
-Then once you put that functionality in, test it out! Try registering an account with your own email address for your user to make sure it works. If you're having trouble, remember you have the CodingNomads forum and perhaps your mentor to help you out.
+Then once you put that functionality in, test it out! Try registering an account with your own email address for your user to make sure it works. If you're having trouble, remember you have the CodingNomads <a href="https://forum.codingnomads.co/c/courses/flask-webdev/33" target="_blank">forum</a> and perhaps your mentor to help you out.
 
 ___
 

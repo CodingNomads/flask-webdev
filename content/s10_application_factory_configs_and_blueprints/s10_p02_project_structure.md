@@ -34,13 +34,13 @@ flask-webdev/
 ```
 
 [//]: # (Alternatively, show a picture of the folder structure)
-[//]: # (Later:
-├── tests/
-│   ├── conftest.py
-│   ├── unit/
-│   │   ├── test_password.py
-│   │   └── user.html
-)
+[//]: # (Later:)
+[//]: # (├── tests/)
+[//]: # (    ├── conftest.py)
+[//]: # (    ├── unit/)
+[//]: # (    │   ├── test_password.py)
+[//]: # (    │   └── user.html)
+
 
 You will notice that there are several new files and folders.
 

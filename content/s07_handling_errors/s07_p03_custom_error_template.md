@@ -20,6 +20,8 @@ This one is pretty compact and simple, no? The template simply uses everything e
 
 ![Error page](../images/not_found.png)
 
-Indeed! all the elements from the base template have been carried over to this new error template thanks to template inheritance. The navbar and the styles appear as they did in the user page from before. In this pic, there's also a menu button on the right since the window is physically smaller.
+Indeed! All the elements from the base template have been carried over to this new error template thanks to template inheritance. The navbar and the styles appear as they did in the user page from before. In this pic, there's also a menu button on the right since the window is physically smaller.
 
-Wanna see the other error message? Well, it'll be hard to see it without learning about a new function in Flask. You'll learn about it in the next section.
+___
+
+Wanna see the other error message? Well, it'll be hard to see it without learning about a new function in Flask. You'll learn about it in the next lesson.

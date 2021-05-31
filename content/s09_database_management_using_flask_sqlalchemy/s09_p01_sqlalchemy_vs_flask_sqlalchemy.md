@@ -32,4 +32,6 @@ Life with Flask-SQLAlchemy
 
 Make sense? Flask-SQLAlchemy only needs a few tweaks to get the power of SQL in the palm of your hands, but you still have the ability to make more complicated SQLAlchemy tweaks down the road if necessary.
 
+___
+
 Excited to hit the ground running with Flask-SQLAlchemy? In the next lesson, you'll install Flask-SQLAlchemy so you can get started with SQL in Flask in no time.

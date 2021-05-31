@@ -6,7 +6,7 @@ Your users are just normal people. Many of these normal people like the convenie
 
 Let's face it, attackers are out there. They always will be, looking to make a quick buck by stealing others information, and passwords can be a goldmine. Hackers can try those passwords on other sites and possibly steal even more information about the those users.
 
-![](https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
+![](https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)
 Better depiction of an attacker, no hoods or ski masks
 
 "But I have to store passwords somewhere, right?", you might be thinking. Yep, you do, but there's a way to store passwords in a database in a way that doesn't represent the actual sequence of characters needed to unlock an account.
@@ -19,6 +19,8 @@ The hashing function gives something unrecognizable from the original password, 
 
 Recovering that password from the hash is nearly impossible, so hackers are stuck in that case. However, given the password and the salt to the same hashing function, the password can be recovered, and the user can be verified.
 
-![diagram of hashing](../images/placeholder.png)
+![diagram of hashing](../images/hashing.png)
+
+___
 
 Hashing is cool and very complex, so it's a relief that all these computations can be done for you using state-of-the-art hashing libraries. You'll see one in the next lesson.

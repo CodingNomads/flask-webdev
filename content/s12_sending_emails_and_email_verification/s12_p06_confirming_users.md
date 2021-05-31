@@ -4,8 +4,7 @@ You can generate tokens, but to put those tokens to use requires some additional
 
 What exactly is the confirmation link? All the view functions you've seen thus far have something for the user to, well, *view* through the rendering of a template. The index page, where you welcome your users, plenty of view functions for displaying and processing forms, and basic user profile pages. But what is there to *view* in a confirmation page? A page that says, "Yo, this is the confirmation page, please enjoy this picture of an ostrich while we process your confirmation?"
 
-![the ostrich in question](https://images.unsplash.com/photo-1572810928169-1756f3f622fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
-The ostrich in question, last seen heading eastbound.
+![The ostrich in question, last seen heading eastbound.](https://images.unsplash.com/photo-1572810928169-1756f3f622fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)
 
 Keep in mind your view functions don't have to show anything at all. At the end of the day, all they are doing is handling a request. A *request* by the user to confirm their account can be processed by your app without showing any ostriches, and then *redirect* the user to another page once the processing is complete.
 
@@ -85,7 +84,7 @@ Then the `unconfirmed()` view function handles showing the user the "please veri
 
 As you may have guessed, you'll need to create yet another template that asks the user they can't use the site until they verify their account. This one is easy, though. Just let them know they still need to verify their account. But don't forget to let them have the app resend a new verification code! Call this template `unconfirmed.html` as in the above view function.
 
-![please confirm your account page](../images/placeholder.png)
+![please confirm your account page](../images/unconfirmed.png)
 
 ___
 

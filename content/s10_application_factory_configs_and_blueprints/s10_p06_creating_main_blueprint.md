@@ -98,6 +98,12 @@ def create_app(config_name):
     return app
 ```
 
-Bam! Now whenever you create an application with your application factory, you'll get an application that's *not* dull and lifeless, but that has all your routes, error handlers, and forms. The `app.register_blueprint()` method takes all that's packaged with the `main` package and treats it as part of itself in a way. Haven't you ever seen those fictional giant robot battles? Well, metaphorically speaking, you just added your robot's legs (the main blueprint) to your own robot's torso (the Flask app). You're about to run, but there's still more to do! Let's get those "legs" running by getting your app working again, in its superior modular form. To the next lesson!
+Bam! Now whenever you create an application with your application factory, you'll get an application that's *not* dull and lifeless, but that has all your routes, error handlers, and forms. The `app.register_blueprint()` method takes all that's packaged with the `main` package and treats it as part of itself in a way.
+
+___
+
+Haven't you ever seen those fictional giant robot battles? Well, metaphorically speaking, you just added your robot's legs (the main blueprint) to your own robot's torso (the Flask app). You're about to run, but there's still more to do! Let's get those "legs" running by getting your app working again, in its superior modular form. To the next lesson!
+
+(Yes, later you'll get the robot arms.)
 
 ![](https://images.unsplash.com/photo-1562461089-907f104c2b9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)

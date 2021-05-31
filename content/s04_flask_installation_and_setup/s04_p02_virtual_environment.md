@@ -22,4 +22,6 @@ _ACTIVATED!_
 
 With your environment activated, you should see `(env)` at the beginning of your terminal input. Remember, you'll want to activate your virtual environment *every time you begin work on your project*! All the dependencies and packages you'll need will be packed in the virtual environment as you continue developing.
 
+___
+
 Now for the moment you've been (very patiently) waiting for: installing Flask! Just one more click to the next part...

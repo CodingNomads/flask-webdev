@@ -13,5 +13,6 @@ python
 
 If no errors are thrown, then congratulations, you're now ready to start developing your Flask app! (I know I keep saying that, but really, you're super close.)
 
-Hang on a sec, do you have a good development environment yet? Nonono, not a virtual environment, but somewhere you can type code into and try executing? No? Well, then let's get you set up with VSCode. That'll be the last step in our setup, then you can actually start developing; it's a promise!
+___
 
+Hang on a sec, do you have a good development environment yet? Nonono, not a virtual environment, but somewhere you can type code into and try executing? No? Well, then let's get you set up with VSCode. That'll be the last step in our setup, then you can actually start developing; it's a promise!

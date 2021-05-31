@@ -40,6 +40,8 @@ Put another way, the `index()` function is a **handler** for the root URL. If th
 
 [//]: # (or now? Also covering `add_url_rule` would be good)
 
+___
+
 Okay, that wasn't too bad, right? Make sure you save the file and pat yourself on the back! Oh, what's that? You haven't even really done anything except write a 7-or-so line file, you say? Yes yes, you'll get to that next. (Web development requires patience, grasshopper!)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gbNCBVzPYak?start=57" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
