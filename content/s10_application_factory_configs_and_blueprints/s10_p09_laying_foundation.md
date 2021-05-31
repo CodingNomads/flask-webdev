@@ -22,8 +22,6 @@ You'll want to include this file in your `flask-webdev` git repo, so don't forge
 
 ### Unit Tests
 
-<div class="alert alert-info" role="alert"><b>Info: </b>This "Unit Tests" subsection is a work in progress.</div>
-
 While there's not a whole lot to test right now, it's still important that you know where you'll put your tests. In this course, you'll use pytest to make your unit tests. This will be a mini crash course in how to get you up and running with pytest and Flask.
 
 #### How Pytest Works

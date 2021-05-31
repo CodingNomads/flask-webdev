@@ -81,7 +81,8 @@ If any of those are false, the method returns `False`. But if all is fine and da
 
 ### Unit Tests
 
-Coming soon.
+<div class="alert alert-info" role="alert"><b>Optional Task: </b>Write a unit test that tests whether a confirmation token can be generated and that the user in question can be confirmed successfully</li>
+</div>
 
 ___
 

@@ -104,6 +104,10 @@ The examples above should get you off to a good start with your API, however the
 | `/users/<int:id>/compositions/`    | GET    | `users.py`        | Return all the compositions written by a user  |
 | `/users/<int:id>/timeline/`        | GET    | `users.py`        | Return all the compositions followed by a user |
 | `/compositions/<int:id>`           | GET    | `compositions.py` | Return a composition                           |
+| `/compositions/<int:id>/comments/` | GET    | `comments.py`     | Return the comments on a composition           |
+| `/compositions/<int:id>/comments/` | POST   | `comments.py`     | Add a comment to a composition                 |
+| `/comments/`                       | GET    | `comments.py`     | Return all the comments                        |
+| `/comments/<int:id>`               | GET    | `comments.py`     | Return a comment                               |
 
 ### Paginating JSON Data
 

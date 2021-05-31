@@ -105,12 +105,6 @@ Two things to keep in mind here. First, the `follow()` method does not need to a
 
 Next is `is_following()`, and as you probably guessed, it determines if the user is following the specified user. And `is_a_follower` determines if another user is a follower. Both make sure the `user` has been assigned an `id` before querying for it in the database, as that would cause an exception.
 
-### Unit Tests
-
-[//]: # (TODO)
-
-Coming soon.
-
 ___
 
 You are well on your way to get followers following all sorts of followed users. In the next couple of lessons, you'll let users do just that from the webapp.

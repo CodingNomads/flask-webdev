@@ -1,0 +1,63 @@
+$CATEGORY: Deployment
+
+::s18_q00_web_server::What is a web server? {
+    ~ %50% Software that handles HTTP interactions with the internet
+    ~ %50% A computer that provides content over the internet
+    ~ %-50% A GIF of a kid hacking the internet
+}
+
+::s18_q01_same_as_framework::A web server is the same as a web framework {
+    F # You can make an app with a web framework, and you can deploy your app to a web server
+}
+
+
+::s18_q02_production_web_servers::[markdown]Which of these are popular production-quality web servers? {
+    ~ %-25% Flask
+    ~ %50% Apache
+    ~ %-25% Flask's `run` command
+    ~ %50% Nginx
+    ~ %-25% Python
+    ~ %-25% Django
+}
+
+::s18_q03_wsgi::WSGI represents a standardized protocol for Python web apps to interact with web servers {
+    T
+}
+
+
+::s18_q04_flask_server_production::It is bad practice and unsafe to use the Flask development server in production{
+    T # The Flask development server is not built for a production environment
+}
+
+
+::s18_q05_paas_provider::In a PaaS, the provider handles (select all that apply){
+    ~ %20% Hardware
+    ~ %20% Storage
+    ~ %20% Networking
+    ~ %20% Operating System
+    ~ %20% Web Server
+    ~ %20% Database
+    ~ %-20% Application
+    ~ %-20% Data
+}
+
+// ### In a IaaS, the provider handles (select all that apply)
+
+// + Hardware
+// + Storage
+// + Networking
+// - Operating System
+// - Web Server
+// - Database
+// - Application
+// - Data
+
+
+::s18_q06_flask_debug::[markdown]It represents a security risk to leave `FLASK_DEBUG\=1` in a production environment{
+    T # Even though debug mode can only be used with the development server, it is still a good idea to be [cautious](https\://www.reddit.com/r/netsec/comments/3n82oq/how_patreon_got_hacked_publicly_exposed_werkzeug/cvlsauf)
+}
+
+
+::s18_q07_secret_key::[markdown]Flask's `SECRET_KEY` is used for encrypting a user's session and other sensitive information{
+    T # Share it with no one!
+}

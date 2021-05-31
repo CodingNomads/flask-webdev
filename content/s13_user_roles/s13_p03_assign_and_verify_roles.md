@@ -140,7 +140,14 @@ You'll notice it's also pretty similar to your `shell_context_processor` decorat
 
 ### Unit Tests
 
-Coming soon.
+<div class="alert alert-info" role="alert"><b>Optional Task: </b>Write unit tests that test the following:
+<ul>
+<li>That your permission helper functions work</li>
+<li>That your roles' names are successfully assigned after <code>Role.insert_roles()</code> is called</li>
+<li>That the User, Mod, and Admin roles each have the correct permissions</li>
+<li>That a new user has the User role automatically assigned by default</li>
+</ul>
+</div>
 
 ### ALMOST DONE. Before you go...
 

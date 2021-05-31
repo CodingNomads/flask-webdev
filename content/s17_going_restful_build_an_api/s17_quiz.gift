@@ -1,0 +1,36 @@
+$CATEGORY: Advanced: Paginating, Many-To-Many Relationships, and API
+
+::s17_q00_api_acronym::The acronym API stands for "Application Programming Interface" {T}
+
+::s17_q01_what_is_api::What is an API? {
+    = a part of your application, that defines how other applications can interact with it
+    ~ a mystery # If it's still a mystery for you, try taking our free Intro to APIs course 
+    ~ a service you can buy that allows you to do something in a webservice, such as Twitter # Many webservices offer an API, and some of them you need to pay for. However, this does not describe what an API is
+}
+
+::s17_q02_api_information::The easiest tool to get information from a web API is ... {
+    = Your browser
+    ~ The Postman app # this is a good tool to work with web APIs, but you need to install it first
+    ~ A custom Python Script
+    ~ Your Flask App
+}
+
+::s17_q03_response_formats::What are the two most common API response formats? {
+    ~%50%JSON
+    ~%50%XML
+    ~%-25%HTML
+    ~%-25%JavaScript
+}
+
+// ::s17_q00_:: What main advantage does interacting with a web API in Postman have over doing it in your browser? {
+//     = You can send all types of HTTP requests, not just GET requests # Correct. While your browser is just a tool for GET requests, Postman can handle also other types of HTTP requests
+//     ~ It works much faster than your browser # The speed of your HTTP requests doesn't depend on the program you're sending them from
+//     ~ It looks better and renders nicely # While this is true, you can achieve that with your browser as well. One of the other answers is more important than this
+// }
+
+::s17_q04_promises::[markdown]What are the main promises that an API gives to a user? {
+    ~%50% It provides a _clear structure_ on **how to ask for the data**
+    ~%50% It provides a _clear structure_ on **how the data will get sent** to you
+    ~%-25% It provides a _clear path_ on **how to monetize the data available** to you
+    ~%-25% It provides a _clear description_ of **how every piece of the webapp functions**
+}

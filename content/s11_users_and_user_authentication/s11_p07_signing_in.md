@@ -132,10 +132,6 @@ Flask-Login is pretty simple. Deceivingly simple... What's it *really* doing? Wh
 
 ![](../images/Flask-Login.png)
 
-### Unit Tests
-
-Coming soon.
-
 ___
 
 

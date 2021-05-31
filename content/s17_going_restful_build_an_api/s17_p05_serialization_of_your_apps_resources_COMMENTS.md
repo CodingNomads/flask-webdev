@@ -10,6 +10,7 @@ So you have your models in the database, and you need to serialize them in order
 
 - `User`
 - `Composition`
+[//]: # (- `Comment`)
 
 The tables these models represent the bulk of the content your clients might care about.
 
@@ -35,6 +36,9 @@ A dictionary like this gives a client enough about a user without, of course, gi
 Some data returned in a JSON object like this can be arbitrary, meaning they don't have to directly map to something you have in the database. For example, `composition_count` represents how many compositions a user has.
 
 <div class="alert alert-info" role="alert"><b>Task: </b>Define the <code>to_json()</code> method for the <code>Composition</code> model. Refer to the tables below when creating the JSON data for each.
+
+[//]: # (and <code>Comment</code>)
+
 <br>
 <br>
 <b>Composition:</b>
@@ -73,11 +77,44 @@ Some data returned in a JSON object like this can be arbitrary, meaning they don
     <td>URL of user who posted composition. Use <code>api.get_user</code> as the route</td>
   </tr>
 </table>
+<br>
+<b>Comment:</b>
+<br>
+<table style="width:100%">
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td><code>url</code></td>
+    <td>URL of comment. Use <code>api.get_comment</code> as the route</td>
+  </tr>
+  <tr>
+    <td><code>composition_url</code></td>
+    <td>URL of composition. Use <code>api.get_composition</code> as the route</td>
+  </tr>
+  <tr>
+    <td><code>body</code></td>
+    <td>Body (plaintext)</td>
+  </tr>
+  <tr>
+    <td><code>body_html</code></td>
+    <td>Body (HTML)</td>
+  </tr>
+  <tr>
+    <td><code>timestamp</code></td>
+    <td>Time comment was written</td>
+  </tr>
+  <tr>
+    <td><code>user_url</code></td>
+    <td>URL of user who wrote the comment. Use <code>api.get_user</code> as the route</td>
+  </tr>
+</table>
 </div>
 
 #### Deserializing From JSON
 
-You can also give your clients the capability to create compositions through your API. This is similar to a user posting a composition or via the forms in your webapp, but an API client would send the relevant data through JSON instead.
+You can also give your clients the capability to create compositions and comments through your API. This is similar to a user posting a composition or comment via the forms in your webapp, but an API client would send the relevant data through JSON instead.
 
 When your app receives such JSON data, like for a composition, your app needs to check that the data is valid before adding to the database. You can write a static method `from_json()` for a `Composition` like so, which would take in a JSON dictionary and return a `Composition`:
 
