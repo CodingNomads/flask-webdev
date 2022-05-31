@@ -1,11 +1,11 @@
 import bleach
 import hashlib
 import re
-from datetime import datetime
+import jwt
+from datetime import datetime, timedelta
 from flask import current_app, url_for
 from flask_login import UserMixin, AnonymousUserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-from itsdangerous import TimedJSONWebSignatureSerializer as WebSerializer
 from . import exceptions
 from . import db
 from . import login_manager
@@ -180,21 +180,31 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
     def generate_confirmation_token(self, expiration_sec=3600):
-        s = WebSerializer(current_app.secret_key, expiration_sec)
-        return s.dumps({'confirm_id': self.id}).decode('utf-8')
+        # For jwt.encode(), expiration is provided as a time in UTC
+        # It is set through the "exp" key in the data to be tokenized
+        expiration_time = datetime.utcnow() + timedelta(seconds=expiration_sec)
+        data = {"exp": expiration_time, "confirm_id": self.id}
+        # Use SHA-512 (known as HS512) for the hash algorithm
+        token = jwt.encode(data, current_app.secret_key, algorithm="HS512")
+        return token
 
     def confirm(self, token):
-        s = WebSerializer(current_app.secret_key)
         try:
-            data = s.loads(token.encode('utf-8'))
-        except:
+            # Ensure token valid and hasn't expired
+            data = jwt.decode(token, current_app.secret_key, algorithms=["HS512"])
+        except jwt.ExpiredSignatureError as e:
+            # token expired
             return False
-        # Matches the logged in user
-        if data.get('confirm_id') != self.id:
+        except jwt.InvalidSignatureError as e:
+            # key does not match
             return False
+        # The token's data must match the user's ID
+        if data.get("confirm_id") != self.id:
+            return False
+        # All checks pass, confirm the user
         self.confirmed = True
         db.session.add(self)
-        # Don't commit yet! We'll make sure it's legit when we go to the /commit page
+        # the data isn't commited yet as you want to make sure the user is currently logged in.
         return True
 
     # Simple check for if a user can do something
@@ -248,16 +258,16 @@ class User(UserMixin, db.Model):
 
 
     def generate_auth_token(self, expiration_sec):
-        s = WebSerializer(current_app.config['SECRET_KEY'],
-                          expires_in=expiration_sec)
-        return s.dumps({'id': self.id}).decode('utf-8')
+        expiration_time = datetime.utcnow() + timedelta(seconds=expiration_sec)
+        data = {"exp": expiration_time, "id": self.id}
+        token = jwt.encode(data, current_app.secret_key, algorithm="HS512")
+        return token
 
 
     @staticmethod
     def verify_auth_token(token):
-        s = WebSerializer(current_app.config['SECRET_KEY'])
         try:
-            data = s.loads(token)
+            data = jwt.decode(token, current_app.secret_key, algorithms=["HS512"])
         except:
             return None
         return User.query.get(data['id'])
