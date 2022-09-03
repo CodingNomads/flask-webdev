@@ -31,7 +31,7 @@ class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_DEV_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
-    
+
     @classmethod
     def init_app(cls, app):
         Config.init_app(app)
@@ -48,7 +48,7 @@ class TestingConfig(Config):
     # Unit tests use a SEPARATE database to prevent modifications of
     # development
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_TEST_URL') or \
-        'sqlite://'
+        'sqlite:///' + os.path.join(basedir, 'data-test.sqlite')
     SERVER_NAME = 'localhost:5000'
 
 
